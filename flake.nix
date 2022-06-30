@@ -40,6 +40,10 @@
           agenix.nixosModules.age
         ];
       };
+      zeus = lib.nixosSystem {
+        inherit system;
+        modules = [ ./system/zeus/configuration.nix ];
+      };
     };
   };
 }
