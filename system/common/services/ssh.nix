@@ -5,7 +5,7 @@
   services.openssh = {
       enable = true;
       passwordAuthentication = false;
-      permitRootLogin = false;
+      permitRootLogin = "no";
       challengeResponseAuthentication = false;
       extraConfig = ''
         AllowGroups ssh
