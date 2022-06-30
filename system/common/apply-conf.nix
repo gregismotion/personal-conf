@@ -1,7 +1,7 @@
 { config, pkgs, ...  }:
 
 {
-  systemd.services.get-conf = {
+  systemd.services.apply-conf = {
     script = "/etc/nixos/scripts/apply-sys.sh";
     description = "Apply the system configuration.";
     wantedBy = [ "multi-user.target" ];
