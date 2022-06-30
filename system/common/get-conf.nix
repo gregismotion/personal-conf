@@ -8,7 +8,7 @@
       git clone https://git.freeself.one/thegergo02/personal-conf
       mv personal-conf nixos
     '';
-    description = "Get the system configuration."
+    description = "Get the system configuration.";
     wantedBy = [ "multi-user.target" ];
     after = [ "network-online.target" ];
     wants = [ "network-online.target" "systemd-networkd-wait-online.service" ];
