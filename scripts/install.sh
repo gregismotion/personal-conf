@@ -2,8 +2,8 @@
 set -xeu
 
 pushd $(dirname $0)/..
-HOST=${0:-kyrios}
-ROOT=${1:-/mnt}
+HOST=${1:-kyrios}
+ROOT=${2:-/mnt}
 echo "Generating hardware-configuration.nix for $HOST..."
 nixos-generate-config --root $ROOT --dir system/$HOST/.
 echo "Installing NixOS on $HOST..."
