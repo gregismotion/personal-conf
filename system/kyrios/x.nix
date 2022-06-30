@@ -1,10 +1,8 @@
 { config, pkgs, ...  }:
 
 {
-  imports = [ ./nvidia.nix ];
   services.xserver = {
 	enable = true;
-	videoDrivers = [ "nvidia" ];
 	layout = "us,hu";
 	xkbOptions = "eurosign:e,grp:win_space_toggle";
 	windowManager.bspwm = { 

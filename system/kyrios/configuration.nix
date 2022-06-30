@@ -6,6 +6,7 @@
     ./boot.nix
     ./network.nix
     ./x.nix
+    ./nvidia.nix
     ./store.nix
     ./users.nix
     ./flakes.nix
