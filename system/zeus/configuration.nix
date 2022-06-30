@@ -8,6 +8,8 @@
     ../common/basic.nix
     ./store.nix
     ./users.nix
+  ] ++ [
+    ./services/minidlna.nix
   ];
   
   system.stateVersion = "21.11";
