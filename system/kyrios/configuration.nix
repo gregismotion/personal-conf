@@ -4,12 +4,12 @@
   imports = [
     ./hardware-configuration.nix
     ./boot.nix
+    ../common/flakes.nix
     ./network.nix
     ./x.nix
     ./nvidia.nix
     ./store.nix
     ./users.nix
-    ./flakes.nix
     ./services/openssh.nix
   ];
   
