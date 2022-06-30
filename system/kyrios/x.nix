@@ -10,6 +10,7 @@
 
   environment.systemPackages = with pkgs; [
     alacritty
+    ungoogled-chromium
   ];
 
   sound.enable = true;

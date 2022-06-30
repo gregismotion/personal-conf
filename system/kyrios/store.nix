@@ -3,10 +3,8 @@
 {
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
-    ungoogled-chromium
-    syncthing
-    tmux
-    wget vim git
+    tmux vim
+    wget git
   ];
   nix.autoOptimiseStore = true;   
 }
