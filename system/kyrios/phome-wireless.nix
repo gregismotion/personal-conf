@@ -1,7 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  age.secrets.wireless-phome.file = ../../secrets/wireless/phome.age;
   networking = {
     useDHCP = false; # NOTE: sometime this will become default...
     wireless = {

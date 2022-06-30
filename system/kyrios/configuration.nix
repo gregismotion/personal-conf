@@ -6,7 +6,9 @@
     ../common/nvidia-legacy390.nix
     ./boot.nix
     ../common/flakes.nix
-    ../common/phome-wireless.nix
+    ../common/basic.nix
+    ../../secrets/age.nix
+    ./phome-wireless.nix
     ./x.nix
     ./store.nix
     ./users.nix

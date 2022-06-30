@@ -24,7 +24,6 @@
     homeManagerConfigurations = {
       thegergo02 = home-manager.lib.homeManagerConfiguration {
         inherit system pkgs;
-
         username = "thegergo02";
         homeDirectory = "/home/thegergo02";
         configuration = {
