@@ -5,7 +5,7 @@ pushd $(dirname $0)/..
 HOST=${1:-kyrios}
 ROOT=${2:-/mnt}
 echo "Generating hardware-configuration.nix for $HOST..."
-nixos-generate-config --root $ROOT --dir system/$HOST/.
+nixos-generate-config --root $ROOT --dir ./system/$HOST/.
 echo "Installing NixOS on $HOST..."
 nixos-install --root $ROOT --flake .#$HOST
 echo "Don't forget to change user passwords!"
