@@ -5,10 +5,8 @@
   environment.systemPackages = with pkgs; [
     ungoogled-chromium
     syncthing
-    bspwm sxhkd rofi maim
-    alacritty tmux
+    tmux
     wget vim git
-    keepassxc
   ];
   nix.autoOptimiseStore = true;   
 }
