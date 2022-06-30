@@ -3,7 +3,7 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../common/nvidia-legacy390.nix
+    ../common/hardware/nvidia-legacy390.nix
     ./boot.nix
     ../common/flakes.nix
     ../common/basic.nix
