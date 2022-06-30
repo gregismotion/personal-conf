@@ -11,7 +11,7 @@ nixos-install --root $ROOT --flake .#$HOST
 echo "Don't forget to change user passwords!"
 echo "Printing users:"
 awk -F: '($3>=1000)&&($1!="nobody")&&($1!~/nixbld*/){print $1}' $ROOT/etc/passwd
-echo "Use 'passwd <user>'!"
+echo "Use 'passwd <user>'! (After booting into system.)"
 echo "NixOS is installed and configured on $HOST."
 echo "Veni, vidi, vici."
 popd
