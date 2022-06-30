@@ -3,14 +3,13 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ../common/nvidia-legacy390.nix
     ./boot.nix
     ../common/flakes.nix
     ../common/phome-wireless.nix
     ./x.nix
-    ./nvidia.nix
     ./store.nix
     ./users.nix
-    ./services/openssh.nix
   ];
   
   system.stateVersion = "21.11";
