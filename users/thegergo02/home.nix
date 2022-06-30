@@ -34,6 +34,8 @@
     mosh
     vscodium pkgs.godot
     redshift
+    keepassxc
+    rofi maim
     dconf
   ];
 

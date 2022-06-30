@@ -9,9 +9,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    rofi maim 
     alacritty
-    keepassxc
   ];
 
   sound.enable = true;
