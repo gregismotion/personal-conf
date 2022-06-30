@@ -1,4 +1,7 @@
-NixOS configuration for the Kyrios system.
+thegergo02's personal configurations (in Nix)
+
+# Zeus
+Home server.
 
 # Kyrios
-Kyrios is my main computer.
+Main computer.

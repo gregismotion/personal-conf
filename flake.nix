@@ -1,5 +1,5 @@
 {
-  description = "Kyrios system config";
+  description = "thegergo02's personal configurations";
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-21.11";
