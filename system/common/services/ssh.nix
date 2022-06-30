@@ -7,6 +7,8 @@
       passwordAuthentication = false;
       permitRootLogin = false;
       challengeeResponseAuthentication = false;
-      allowGroups = [ "ssh" ];
+      extraConfig = ''
+        AllowGroups ssh
+      '';
   };
 }
