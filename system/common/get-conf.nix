@@ -8,7 +8,7 @@
       git clone https://git.freeself.one/thegergo02/personal-conf
       mv personal-conf nixos
     '';
-    wantedBy = [ "multi-user.target" ];
+    wantedBy = [ "multi-user.target" "network-online.target" ];
     path = [ pkgs.git ];
   };
 }
