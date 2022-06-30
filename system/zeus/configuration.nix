@@ -9,8 +9,8 @@
     ./store.nix
     ./users.nix
   ] ++ [
-    ./services/minidlna.nix
-    ./services/ssh.nix
+    ../common/services/minidlna.nix
+    ../common/services/ssh.nix
   ];
   
   system.stateVersion = "21.11";
