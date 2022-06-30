@@ -6,6 +6,7 @@
     ./boot.nix
     ../common/flakes.nix
     ../common/basic.nix
+    ../common/get-conf.nix
     ./store.nix
     ./users.nix
   ] ++ [
