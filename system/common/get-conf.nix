@@ -7,6 +7,8 @@
       rm -rf nixos
       git clone https://git.freeself.one/thegergo02/personal-conf
       mv personal-conf nixos
+      chown -R root:conf /etc/nixos
+      chmod -R g+w /etc/nixos
     '';
     description = "Get the system configuration.";
     wantedBy = [ "multi-user.target" ];
