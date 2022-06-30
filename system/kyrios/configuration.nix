@@ -5,7 +5,7 @@
     ./hardware-configuration.nix
     ./boot.nix
     ../common/flakes.nix
-    ./network.nix
+    ../common/phome-wireless.nix
     ./x.nix
     ./nvidia.nix
     ./store.nix
