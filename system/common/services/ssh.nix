@@ -6,7 +6,7 @@
       enable = true;
       passwordAuthentication = false;
       permitRootLogin = false;
-      challengeeResponseAuthentication = false;
+      challengeResponseAuthentication = false;
       extraConfig = ''
         AllowGroups ssh
       '';
