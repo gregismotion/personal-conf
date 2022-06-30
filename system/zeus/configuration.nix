@@ -10,6 +10,7 @@
     ./users.nix
   ] ++ [
     ./services/minidlna.nix
+    ./services/ssh.nix
   ];
   
   system.stateVersion = "21.11";
