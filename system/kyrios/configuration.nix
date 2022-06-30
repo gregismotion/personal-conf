@@ -15,4 +15,5 @@
   
   system.stateVersion = "21.11";
   time.timeZone = "Europe/Budapest";
+  networking.hostName = "kyrios";
 }

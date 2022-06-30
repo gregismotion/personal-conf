@@ -36,7 +36,6 @@
     nixosConfigurations = {
       kyrios = lib.nixosSystem {
         inherit system;
-
         modules = [
           ./system/kyrios/configuration.nix
           agenix.nixosModules.age
