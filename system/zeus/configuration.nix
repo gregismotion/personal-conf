@@ -7,6 +7,7 @@
     ../common/flakes.nix
     ../common/basic.nix
     ../common/get-conf.nix
+    ../common/apply-conf.nix
     ./store.nix
     ./users.nix
   ] ++ [

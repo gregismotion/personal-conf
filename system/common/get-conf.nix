@@ -16,6 +16,7 @@
     serviceConfig.RestartSec = 5;
     serviceConfig.StartLimitIntervalSec = 500;
     serviceConfig.StartLimitBurst = 5;
+    serviceConfig.Type = "oneshot";
     path = [ pkgs.git ];
   };
 }
