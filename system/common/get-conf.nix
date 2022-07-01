@@ -1,6 +1,7 @@
 { config, pkgs, ...  }:
 
 {
+  imports = [ groups/conf.nix ];
   systemd.services.get-conf = {
     script = ''
       cd /etc/

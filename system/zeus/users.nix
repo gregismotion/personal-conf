@@ -4,9 +4,6 @@
   users = {
     defaultUserShell = pkgs.zsh;
     
-    groups.ssh.name = "ssh";
-    groups.conf.name = "conf";
-
     users.thegergo02 = {
       isNormalUser = true;
       extraGroups = [ "wheel" "conf" "ssh" ];
