@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ../common/type/headless.nix
     ./hardware-configuration.nix
     ./boot.nix
     ../common/flakes.nix

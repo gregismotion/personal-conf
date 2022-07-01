@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ../common/type/gui.nix
     ./hardware-configuration.nix
     ../common/hardware/nvidia-legacy390.nix
     ../common/hardware/rtl88x2bu.nix

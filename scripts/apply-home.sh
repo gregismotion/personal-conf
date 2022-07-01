@@ -1,4 +1,5 @@
 #!/bin/sh
+echo $CONF_HEADLESS
 pushd $(dirname $0)/..
 pushd users/$USER/
 if [[ $CONF_HEADLESS != 0 ]] 
