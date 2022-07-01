@@ -8,7 +8,7 @@
 
       printf "Waiting for Internet connectivity\n"
       RESPONSE=0
-      while [ $RESPONSE != 2 ] && [ $RESPONSE != 3 ]
+      while [ "$RESPONSE" != "2" ] && [ "$RESPONSE" != "3" ]
       do
 	      RESPONSE=$(curl -s --max-time 2 -I https://git.freeself.one | sed 's/^[^ ]*  *\([0-9]\).*/\1/; 1q')
 	      case $RESPONSE in
