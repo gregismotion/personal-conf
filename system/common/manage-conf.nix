@@ -5,12 +5,12 @@
   systemd.services.manage-conf = {
     script = ''
       cd /etc/
-      rm -rf nixos
 
       if test -d "/etc/nixos/.git"; then
         cd /etc/nixos
         git pull
       else
+        rm -rf nixos
         git clone https://git.freeself.one/thegergo02/personal-conf
         mv personal-conf nixos
       fi
