@@ -31,6 +31,7 @@
     serviceConfig.StartLimitIntervalSec = 500;
     serviceConfig.StartLimitBurst = 5;*/
     serviceConfig.Type = "oneshot";
+    restartIfChanged = false; # NOTE: to allow apply script to work
     path = [ pkgs.git ];
   };
 }
