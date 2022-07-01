@@ -7,8 +7,13 @@
       cd /etc/
       rm -rf nixos
 
-      git clone https://git.freeself.one/thegergo02/personal-conf
-      mv personal-conf nixos
+      if test -d "/etc/nixos/.git"; then
+        cd /etc/nixos
+        git pull
+      else
+        git clone https://git.freeself.one/thegergo02/personal-conf
+        mv personal-conf nixos
+      fi
 
       pushd /etc/nixos
       HARDWARE_CONF=/etc/hardware-configuration.nix
