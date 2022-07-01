@@ -7,8 +7,7 @@
     ./boot.nix
     ../common/flakes.nix
     ../common/basic.nix
-    ../common/get-conf.nix
-    ../common/apply-conf.nix
+    ../common/manage-conf.nix
     ./store.nix
     ./users.nix
   ] ++ [
