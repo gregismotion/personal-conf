@@ -10,6 +10,8 @@
       mv personal-conf nixos
       cd /etc/nixos
       mv /etc/hardware-configuration.nix ./system/$HOST/.
+      # TODO: git push
+      # TODO: apply somewhere (but installer does not need it for example)
       chown -R root:conf /etc/nixos
       chmod -R g+w /etc/nixos
     '';
