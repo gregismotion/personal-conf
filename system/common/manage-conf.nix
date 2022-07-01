@@ -24,16 +24,7 @@
         mv personal-conf nixos
       fi
 
-      pushd /etc/nixos
-      HARDWARE_CONF=/etc/hardware-configuration.nix
-      if test -f "$HARDWARE_CONF"; then
-        mv $HARDWARE_CONF ./system/$HOST/.
-      fi
-      # TODO: git push
       # TODO: apply somewhere (but installer does not need it for example)
-      chown -R root:conf .
-      chmod -R g+w .
-      popd
     '';
     description = "Manage the system configuration.";
     wantedBy = [ "multi-user.target" ];
