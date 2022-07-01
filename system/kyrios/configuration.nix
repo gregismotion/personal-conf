@@ -14,6 +14,7 @@
     ./x.nix
     ./store.nix
     ./users.nix
+    ../common/manage-conf.nix
   ];
   
   system.stateVersion = "21.11";
