@@ -6,10 +6,19 @@
     script = ''
       cd /etc/
 
-      if test -d "/etc/nixos/.git"; then
-        cd /etc/nixos
-        git pull
-      else
+      printf "Waiting for Internet connectivity\n"
+      RESPONSE=0
+      while [ $RESPONSE != 2 ] && [ $RESPONSE != 3 ]
+      do
+	      RESPONSE=$(curl -s --max-time 2 -I https://git.freeself.one | sed 's/^[^ ]*  *\([0-9]\).*/\1/; 1q')
+	      case $RESPONSE in
+		      [23]) printf "\nConnectivity is up\n";;
+		      5) printf "\nAccess denied or server error\n";;
+		      *) printf "\nThe network is down or very slow\n";;
+	      esac
+      done
+
+      if ! [[ test -d "/etc/nixos/.git"; ]] then
         rm -rf nixos
         git clone https://git.freeself.one/thegergo02/personal-conf
         mv personal-conf nixos
@@ -31,11 +40,7 @@
     wantedBy = [ "multi-user.target" ];
     after = [ "network-online.target" ];
     wants = [ "network-online.target" "systemd-networkd-wait-online.service" ];
-    /*serviceConfig.Restart = "on-failure";
-    serviceConfig.RestartSec = 5;
-    serviceConfig.StartLimitIntervalSec = 500;
-    serviceConfig.StartLimitBurst = 5;*/
     serviceConfig.Type = "oneshot";
-    path = [ pkgs.git ];
+    path = [ pkgs.git pkgs.curl ];
   };
 }
