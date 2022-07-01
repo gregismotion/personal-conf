@@ -24,8 +24,8 @@
     };
   };
   
-  home.file.".config/bspwm".source = ../../config/bspwm;
-  home.file.".config/sxhkd".source = ../../config/sxhkd;
+  home.file.".config/bspwm".source = ../../../config/bspwm;
+  home.file.".config/sxhkd".source = ../../../config/sxhkd;
 
   services.sxhkd.enable = true;
   xsession = {
