@@ -1,6 +1,8 @@
 #!/bin/sh
-echo $CONF_HEADLESS
 pushd $(dirname $0)/..
+if [[ ! -f "$HOME/.config/git/config" ]]; then
+	git config --global --add safe.directory "$(pwd)"
+fi
 pushd users/$USER/
 if [[ $CONF_HEADLESS != 0 ]] 
 then
