@@ -10,6 +10,10 @@ then
 else
 	ln -sf gui.nix home.nix
 fi
+if [[ $USER -eq "root" ]]
+then
+	chown root:conf home.nix # NOTE: fix when root runs script
+fi
 popd
 nix build .#homeManagerConfigurations.$USER.activationPackage
 ./result/activate
