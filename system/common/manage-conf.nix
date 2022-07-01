@@ -2,12 +2,14 @@
 
 {
   imports = [ groups/conf.nix ];
-  systemd.services.get-conf = {
+  systemd.services.manage-conf = {
     script = ''
       cd /etc/
       rm -rf nixos
       git clone https://git.freeself.one/thegergo02/personal-conf
       mv personal-conf nixos
+      cd /etc/nixos
+      mv /etc/hardware-configuration.nix ./system/$HOST/.
       chown -R root:conf /etc/nixos
       chmod -R g+w /etc/nixos
     '';
@@ -15,10 +17,10 @@
     wantedBy = [ "multi-user.target" ];
     after = [ "network-online.target" ];
     wants = [ "network-online.target" "systemd-networkd-wait-online.service" ];
-    serviceConfig.Restart = "on-failure";
+    /*serviceConfig.Restart = "on-failure";
     serviceConfig.RestartSec = 5;
     serviceConfig.StartLimitIntervalSec = 500;
-    serviceConfig.StartLimitBurst = 5;
+    serviceConfig.StartLimitBurst = 5;*/
     serviceConfig.Type = "oneshot";
     path = [ pkgs.git ];
   };
