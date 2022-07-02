@@ -9,9 +9,15 @@
 
     agenix.url = "github:yaxitech/ragenix";
     agenix.inputs.nixpkgs.follows = "nixpkgs";
+
+    secrets = {
+      flake = false;
+      type = "git";
+      url = "git+ssh://git@git.freeself.one/thegergo02/personal-secrets";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, agenix, ... }: 
+  outputs = { nixpkgs, home-manager, agenix, secrets, ... }@inputs: 
   let
     system = "x86_64-linux";
 
@@ -35,6 +41,7 @@
     nixosConfigurations = {
       kyrios = lib.nixosSystem {
         inherit system;
+        specialArgs = { inherit inputs; };
         modules = [
           ./system/kyrios/configuration.nix
           agenix.nixosModules.age

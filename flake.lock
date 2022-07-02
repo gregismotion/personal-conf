@@ -99,7 +99,8 @@
       "inputs": {
         "agenix": "agenix",
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "secrets": "secrets"
       }
     },
     "rust-overlay": {
@@ -125,6 +126,22 @@
         "owner": "oxalica",
         "repo": "rust-overlay",
         "type": "github"
+      }
+    },
+    "secrets": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1656774670,
+        "narHash": "sha256-fhl2KFY5mLmyZg9p83ay8rZgNKhqt4MHzpRKfA9+A9Q=",
+        "ref": "master",
+        "rev": "5c8d591e94eedede57b8739cc6b588b8961c9d07",
+        "revCount": 1,
+        "type": "git",
+        "url": "git+ssh://git@git.freeself.one/thegergo02/personal-secrets"
+      },
+      "original": {
+        "type": "git",
+        "url": "git+ssh://git@git.freeself.one/thegergo02/personal-secrets"
       }
     }
   },

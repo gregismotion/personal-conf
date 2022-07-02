@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports = [
@@ -9,7 +9,7 @@
     ./boot.nix
     ../common/flakes.nix
     ../common/basic.nix
-    ../../secrets/age.nix
+    "${inputs.secrets}/age.nix"
     ./phome-wireless.nix
     ./x.nix
     ./store.nix
