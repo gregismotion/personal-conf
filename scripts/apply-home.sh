@@ -11,7 +11,7 @@ if [[ -d "users/$USER/" ]]; then # NOTE: fix when user has no config
 	else
 		ln -sf gui.nix home.nix
 	fi
-	if [[ $USER -eq "root" ]]
+	if [ "$UID" = "0" ]
 	then
 		chown root:conf home.nix # NOTE: fix when root runs script
 		chmod g+rwx home.nix # NOTE: fix when root runs script
