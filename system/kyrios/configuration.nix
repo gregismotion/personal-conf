@@ -14,6 +14,7 @@
     ./store.nix
     ../common/users.nix
     ../common/manage-conf.nix
+    ../common/services/ssh.nix
   ];
   
   system.stateVersion = "21.11";
