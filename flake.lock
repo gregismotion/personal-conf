@@ -82,11 +82,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1655628091,
-        "narHash": "sha256-ING2A6VtRSTgNdTiV8rgCNYTWOo2iFl8d5OMO4bOqBo=",
+        "lastModified": 1656608236,
+        "narHash": "sha256-ZRsimvpsuj5FI0R7uuTVq7vV/C3zKn4Kcfm6roOaNjA=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "15463250cb412f95809f22c151725579904812a9",
+        "rev": "399c514226ac48d7855838d0777f47f2fa59730a",
         "type": "github"
       },
       "original": {
@@ -131,11 +131,11 @@
     "secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1656774670,
-        "narHash": "sha256-fhl2KFY5mLmyZg9p83ay8rZgNKhqt4MHzpRKfA9+A9Q=",
+        "lastModified": 1656778328,
+        "narHash": "sha256-D2AoaPAiEXMc2Zk4ZJzuoBmq89S6dLRzJKxSVKgPFRY=",
         "ref": "master",
-        "rev": "5c8d591e94eedede57b8739cc6b588b8961c9d07",
-        "revCount": 1,
+        "rev": "8435b6b4555d248e0317e7bc7886cbd8547ed15e",
+        "revCount": 3,
         "type": "git",
         "url": "git+ssh://git@git.freeself.one/thegergo02/personal-secrets"
       },
