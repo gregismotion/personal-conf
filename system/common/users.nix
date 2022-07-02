@@ -1,11 +1,17 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
+  imports = [
+    "${inputs.secrets}/users/thegergo02/password.nix"
+  ];
+  
   users = {
+    mutableUsers = false;
     defaultUserShell = pkgs.zsh;
-    
+
     users.thegergo02 = {
       isNormalUser = true;
+      passwordFile = config.age.secrets.users-thegergo02-password.path;
       extraGroups = [ 
         "wheel" "conf" "ssh"
         "sound" "video" 

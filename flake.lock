@@ -131,11 +131,11 @@
     "secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1656778328,
-        "narHash": "sha256-D2AoaPAiEXMc2Zk4ZJzuoBmq89S6dLRzJKxSVKgPFRY=",
+        "lastModified": 1656779575,
+        "narHash": "sha256-y5bh3RIKCm08hertuqQiCguum/MS3/7hGMKS9FVhl1E=",
         "ref": "master",
-        "rev": "8435b6b4555d248e0317e7bc7886cbd8547ed15e",
-        "revCount": 3,
+        "rev": "13fe81d17acd320c3b9c865ac120197c0eeb3e74",
+        "revCount": 5,
         "type": "git",
         "url": "git+ssh://git@git.freeself.one/thegergo02/personal-secrets"
       },
