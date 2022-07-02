@@ -9,8 +9,8 @@ nixos-generate-config --root $ROOT --show-hardware-config >> system/$HOST/hardwa
 echo "Installing NixOS on $HOST..."
 nixos-install --root $ROOT --flake .#$HOST
 cp -r $(dirname $0)/.. /mnt/etc/nixos
-chmod -R 755 /mnt/etc/nixos
 chown -R root:conf /mnt/etc/nixos
+chmod -R g+rwx /mnt/etc/nixos
 # TODO: push hardware conf to repo
 echo "Don't forget to change user passwords!"
 echo "Printing users:"

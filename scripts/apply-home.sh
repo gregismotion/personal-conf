@@ -14,6 +14,7 @@ if [[ -d "users/$USER/" ]]; then # NOTE: fix when user has no config
 	if [[ $USER -eq "root" ]]
 	then
 		chown root:conf home.nix # NOTE: fix when root runs script
+		chmod g+rwx home.nix # NOTE: fix when root runs script
 	fi
 	popd
 	nix build .#homeManagerConfigurations.$USER.activationPackage
