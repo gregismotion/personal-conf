@@ -9,7 +9,7 @@
     ../common/basic.nix
     ../common/manage-conf.nix
     ./store.nix
-    ./users.nix
+    ./common/users.nix
   ] ++ [
     ../common/services/minidlna.nix
     ../common/services/ssh.nix

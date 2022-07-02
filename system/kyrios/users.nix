@@ -5,9 +5,6 @@
   users.users.thegergo02 = {
     isNormalUser = true;
     extraGroups = [ 
-	"wheel" 
-        "sound" "video" 
-        "conf"
     ];
   };
 }

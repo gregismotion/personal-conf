@@ -12,7 +12,7 @@
     ./phome-wireless.nix
     ./x.nix
     ./store.nix
-    ./users.nix
+    ../common/users.nix
     ../common/manage-conf.nix
   ];
   
