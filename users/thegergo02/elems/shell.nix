@@ -9,8 +9,7 @@
         init.defaultBranch = "master";
         url."github:".insteadOf = "https://github.com/";
         url."freeself_git:".insteadOf = "https://git.freeself.one/";
-        safe.nixos = "/etc/nixos"; # FIXME: this could change
-        safe.secrets = "/etc/nixos/secrets"; # FIXME: this could change
+        safe.directory = "*";
       };
     };
 
