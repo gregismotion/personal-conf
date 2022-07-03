@@ -9,12 +9,12 @@ ROOT=${2:-/setup}
 # NOTE: ensure private flake's key
 pushd $HOME
 echo '''
-[url "freeself:"]
-insteadOf = "git+ssh://git@git.freeself.one:"
+[url "ssh://freeself"]
+insteadOf = "git+ssh://git@git.freeself.one"
 ''' >> .gitconfig
 mkdir -p .ssh
 echo '''
-Host freeself
+Host freeself_git
 	User git
 	IdentityFile /etc/ssh/id_rsa
 	HostName git.freeself.one
