@@ -26,7 +26,7 @@ if [[ -d "system/$HOST" ]]; then
 	nixos-generate-config --root $ROOT --show-hardware-config >> system/$HOST/hardware-configuration.nix
 
 	echo "Installing NixOS on $HOST..."
-	nixos-install --no-root-passwd --root $root --flake .#$HOST
+	nixos-install --no-root-passwd --root $ROOT --flake .#$HOST
 	
 	echo "Fixing permissions on config directory."
 	cp -r $(dirname $0)/.. $ROOT/etc/nixos
