@@ -21,9 +21,9 @@ if [[ -d "system/$HOST" ]]; then
 	echo "Generating hardware-configuration.nix for $HOST."
 	HARDWARE_CONF=system/$HOST/hardware-configuration.nix
 	if [[ -f "$HARDWARE_CONF" ]]; then
-	rm $HARDWARE_CONF
+		rm $HARDWARE_CONF
 	fi
-	nixos-generate-config --root $ROOT --show-hardware-config >> system/$HOST/hardware-configuration.nix
+	nixos-generate-config --root $ROOT --show-hardware-config >> $HARDWARE_CONF
 
 	echo "Installing NixOS on $HOST..."
 	nixos-install --no-root-passwd --root $ROOT --flake .#$HOST
@@ -32,8 +32,10 @@ if [[ -d "system/$HOST" ]]; then
 	cp -r $(dirname $0)/.. $ROOT/etc/nixos
 	chown -R root:conf $ROOT/etc/nixos
 	chmod -R g+rwx $ROOT/etc/nixos
-
-	# TODO: push hardware conf to repo
+	
+	git add $HARDWARE_CONF
+	git commit -m "add: new $HOST configuration (automation)"
+	git push
 
 	echo "NixOS is installed and configured on $HOST."
 	echo "Veni, vidi, vici."
