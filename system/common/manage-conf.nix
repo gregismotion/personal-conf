@@ -33,6 +33,6 @@
     after = [ "network-online.target" ];
     wants = [ "network-online.target" "systemd-networkd-wait-online.service" ];
     serviceConfig.Type = "oneshot";
-    path = [ pkgs.git pkgs.curl ];
+    path = [ pkgs.nix pkgs.curl ];
   };
 }
