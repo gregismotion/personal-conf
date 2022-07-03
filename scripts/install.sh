@@ -12,6 +12,9 @@ echo '''
 [url "ssh://freeself_git"]
 insteadOf = "git+ssh://git@git.freeself.one"
 ''' >> .gitconfig
+# NOTE: identity for pushing hardware conf
+git config --global user.name "personal-$HOSTNAME-$HOST"
+git config --global user.name "$HOSTNAME@freeself.one"
 mkdir -p .ssh
 echo '''
 Host freeself_git
