@@ -4,7 +4,7 @@
   imports = [ groups/conf.nix ];
   systemd.services.manage-conf = {
     script = ''
-      cd /etc/
+      pushd /etc/
 
       printf "Waiting for Internet connectivity\n"
       RESPONSE=0
@@ -25,6 +25,15 @@
       fi
 
       # TODO: apply somewhere (but installer does not need it for example)
+
+      # FIXME: only workaround, shouldn't be needed
+      pushd /etc/nixos
+      if [[ ! -d "/etc/nixos/keys" ]]; then
+        git clone git+ssh://git@git.freeself.one/thegergo02/personal-keys
+        mv personal-keys keys
+      fi
+      popd
+      popd
     '';
     description = "Manage the system configuration.";
     wantedBy = [ "multi-user.target" ];
