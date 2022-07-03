@@ -8,6 +8,10 @@ ROOT=${2:-/setup}
 # TODO: put it in better place
 # NOTE: ensure private flake's key
 pushd $HOME
+echo '''
+[url "freeself:"]
+insteadOf = "git+ssh://git@git.freeself.one:"
+''' >> .gitconfig
 mkdir -p .ssh
 echo '''
 Host freeself

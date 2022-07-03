@@ -7,10 +7,10 @@
     mode = "0600";
     source = 
     "${inputs.keys}/${config.networking.hostName}/id_rsa_secret";
-  }
+  };
   environment.etc."ssh/id_rsa.pub" = {
     mode = "0600";
     source = 
     "${inputs.keys}/${config.networking.hostName}/id_rsa_secret.pub";
-  }
+  };
 }

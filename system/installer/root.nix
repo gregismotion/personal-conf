@@ -1,16 +1,10 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, lib, ... }:
 
 {
   users = {
     users.root = {
       password = "nixos";
       services.getty.autologinUser = lib.mkDefault "root";
-    };
-  };
-  programs.git = {
-    enable = true;
-    extraConfig = {
-      url."freeself:".insteadOf = "git+ssh://git@git.freeself.one:";
     };
   };
 }
