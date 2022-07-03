@@ -4,6 +4,23 @@ set -e
 pushd $(dirname $0)/..
 HOST=${1:-kyrios}
 ROOT=${2:-/setup}
+
+# TODO: put it in better place
+# NOTE: ensure private flake's key
+pushd $HOME
+echo '''
+[url "freeself:"]
+insteadOf = "git+ssh://git@git.freeself.one:"
+''' >> .gitconfig
+mkdir .ssh
+echo '''
+Host freeself
+	User git
+	IdentityFile /etc/ssh/id_rsa # NOTE: only root can access this
+	HostName git.freeself.one
+''' >> .ssh/config
+popd
+
 if [[ -d "$ROOT" ]]; then
 	echo "$ROOT is created, assuming manual installation..."
 else
