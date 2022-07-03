@@ -5,9 +5,18 @@
     "${inputs.secrets}/users/thegergo02/password.nix"
   ];
   
+  security.sudo.wheelNeedsPassword = false;
+
   users = {
     mutableUsers = false;
     defaultUserShell = pkgs.zsh;
+      
+    # FIXME: delete, security concern
+    users.recovery = {
+      isNormalUser = true;
+      extraGroups = [ "wheel" "conf" "ssh" ];
+      hashedPassword = "$6$a7sHnWzT6fUUGu7z$RmUgGkKp4wwEv.8772Kz7rGVPNPNNKEggNqTB..qD5MlUf8XoQoPhDcrphG7eUggyvL9620wUFXD.cl4v3OUf0";
+    };
 
     users.thegergo02 = {
       isNormalUser = true;
