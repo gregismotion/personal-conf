@@ -10,6 +10,7 @@
     ../common/manage-conf.nix
     ./store.nix
     ../common/users.nix
+    ../common/key.nix
   ] ++ [
     ../common/services/minidlna.nix
     ../common/services/ssh.nix
