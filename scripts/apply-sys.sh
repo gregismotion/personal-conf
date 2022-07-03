@@ -1,6 +1,6 @@
 #!/bin/sh
 pushd $(dirname $0)/..
 sudo nixos-rebuild switch --flake .#
-chmod -R g+rwx .
-chown -R root:conf
+sudo chmod -R g+rwx .
+sudo chown -R root:conf
 popd
