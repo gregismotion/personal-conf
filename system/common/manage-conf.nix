@@ -18,7 +18,7 @@
 	      esac
       done
 
-      if ! test -d "/etc/nixos/.git"; then
+      if [[ ! -d "/etc/nixos/.git" ]]; then
         rm -rf nixos
         git clone https://git.freeself.one/thegergo02/personal-conf
         mv personal-conf nixos
