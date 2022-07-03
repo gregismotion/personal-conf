@@ -4,12 +4,26 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-21.11";
 
-    home-manager.url = "github:nix-community/home-manager/release-21.11";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager = {
+      url = "github:nix-community/home-manager/release-21.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
-    agenix.url = "github:yaxitech/ragenix";
-    agenix.inputs.nixpkgs.follows = "nixpkgs";
+    agenix = {
+      url = "github:yaxitech/ragenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
+    nixos-generators = {
+      url = "github:nix-community/nixos-generators";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    keys = {
+      flake = false;
+      type = "git";
+      url = "git+ssh://git@git.freeself.one/thegergo02/personal-keys";
+    };
     secrets = {
       flake = false;
       type = "git";
@@ -17,7 +31,7 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, agenix, secrets, ... }@inputs: 
+  outputs = { nixpkgs, home-manager, agenix, secrets, nixos-generators, ... }@inputs: 
   let
     system = "x86_64-linux";
 
@@ -27,6 +41,7 @@
     
     lib = nixpkgs.lib;
   in {
+    # TODO: read dynamically
     homeManagerConfigurations = {
       thegergo02 = home-manager.lib.homeManagerConfiguration {
         inherit system pkgs;
@@ -39,6 +54,14 @@
     };
 
     nixosConfigurations = {
+      installer = (lib.makeOverridable lib.nixosSystem) {
+        inherit pkgs;
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./system/installer/configuration.nix
+        ];
+        #format = "iso";
+      };
       kyrios = lib.nixosSystem {
         inherit system;
         specialArgs = { inherit inputs; };
@@ -49,7 +72,11 @@
       };
       zeus = lib.nixosSystem {
         inherit system;
-        modules = [ ./system/zeus/configuration.nix ];
+        specialArgs = { inherit inputs; };
+        modules = [ 
+          ./system/zeus/configuration.nix
+          agenix.nixosModules.age
+        ];
       };
     };
   };

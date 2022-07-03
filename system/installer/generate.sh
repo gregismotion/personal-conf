@@ -1,4 +1,4 @@
 #!/bin/sh
 set -xeu
 
-nixos-generate -f iso -c ./configuration.nix
+nix run github:nix-community/nixos-generators -- --flake ../../.#installer -f iso

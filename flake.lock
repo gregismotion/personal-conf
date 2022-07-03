@@ -80,6 +80,58 @@
         "type": "github"
       }
     },
+    "keys": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1656833698,
+        "narHash": "sha256-dcMdYbwW8FAVvYXgwPJ378mnEivmyjaY8aSCOppidG0=",
+        "ref": "master",
+        "rev": "1765ec4ba09d5b6ebabb0140b2c1766c8e58f62a",
+        "revCount": 1,
+        "type": "git",
+        "url": "git+ssh://git@git.freeself.one/thegergo02/personal-keys"
+      },
+      "original": {
+        "type": "git",
+        "url": "git+ssh://git@git.freeself.one/thegergo02/personal-keys"
+      }
+    },
+    "nixlib": {
+      "locked": {
+        "lastModified": 1636849918,
+        "narHash": "sha256-nzUK6dPcTmNVrgTAC1EOybSMsrcx+QrVPyqRdyKLkjA=",
+        "owner": "nix-community",
+        "repo": "nixpkgs.lib",
+        "rev": "28a5b0557f14124608db68d3ee1f77e9329e9dd5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "nixpkgs.lib",
+        "type": "github"
+      }
+    },
+    "nixos-generators": {
+      "inputs": {
+        "nixlib": "nixlib",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1655901362,
+        "narHash": "sha256-1cPiO869Dr3hqn1qhqd6amvw5U0PB7XDSdwMsIMWNiQ=",
+        "owner": "nix-community",
+        "repo": "nixos-generators",
+        "rev": "898edde476232843da50c9a855efaf5dd8caadaa",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "nixos-generators",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1656608236,
@@ -99,6 +151,8 @@
       "inputs": {
         "agenix": "agenix",
         "home-manager": "home-manager",
+        "keys": "keys",
+        "nixos-generators": "nixos-generators",
         "nixpkgs": "nixpkgs",
         "secrets": "secrets"
       }
