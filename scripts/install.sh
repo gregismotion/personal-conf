@@ -12,7 +12,7 @@ echo '''
 [url "freeself:"]
 insteadOf = "git+ssh://git@git.freeself.one:"
 ''' >> .gitconfig
-mkdir .ssh
+mkdir -p .ssh
 echo '''
 Host freeself
 	User git
