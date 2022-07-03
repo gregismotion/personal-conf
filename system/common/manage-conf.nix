@@ -4,9 +4,8 @@
   imports = [ groups/conf.nix ];
   systemd.services.manage-conf = {
     script = ''
-	# FIXME: hardcoded paths
       pushd /etc/
-
+      # FIXME: hardcoded paths
       printf "Waiting for Internet connectivity\n"
       RESPONSE=0
       while [ "$RESPONSE" != "2" ] && [ "$RESPONSE" != "3" ]
