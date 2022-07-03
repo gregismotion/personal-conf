@@ -11,7 +11,7 @@ else
 	SETUP=system/$HOST/setup.sh
 	if [[ -f "$SETUP" ]]; then
 		echo "Running '$SETUP'..."
-		$SETUP
+		source $SETUP
 	else
 		echo "No setup.sh, aborting!"
 		exit 1
