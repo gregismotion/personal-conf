@@ -8,7 +8,7 @@
     };
   };
   
-  age.identityPaths = [ "/etc/ssh/ssh_host_rsa_key" "/etc/nixos/keys/${config.networking.hostName}/id_rsa" ];
+  age.identityPaths = [ "/etc/nixos/keys/${config.networking.hostName}/id_rsa" ];
 
   environment.etc."ssh/ssh_host_rsa_key".source = 
     "${inputs.keys}/${config.networking.hostName}/id_rsa";
