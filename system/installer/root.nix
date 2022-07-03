@@ -10,7 +10,7 @@
   programs.git = {
     enable = true;
     extraConfig = {
-      url."freeself:".insteadOf = "git+ssh://git@git.freeself.one:"
+      url."freeself:".insteadOf = "git+ssh://git@git.freeself.one:";
     };
   };
 }
