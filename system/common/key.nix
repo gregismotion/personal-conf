@@ -13,11 +13,11 @@
   environment.etc."ssh/id_rsa" = {
     mode = "0600";
     source = 
-    "${inputs.keys}/${config.networking.hostName}/id_rsa_secret";
+    "${inputs.keys}/${config.networking.hostName}/id_rsa";
   };
   environment.etc."ssh/id_rsa.pub" = {
     mode = "0600";
     source = 
-    "${inputs.keys}/${config.networking.hostName}/id_rsa_secret.pub";
+    "${inputs.keys}/${config.networking.hostName}/id_rsa.pub";
   };
 }

@@ -44,17 +44,17 @@
     "keys": {
       "flake": false,
       "locked": {
-        "lastModified": 1656833698,
-        "narHash": "sha256-dcMdYbwW8FAVvYXgwPJ378mnEivmyjaY8aSCOppidG0=",
+        "lastModified": 1656843007,
+        "narHash": "sha256-+NOh82pphxKvtG2KRCQ+57xDDPb0nRqPeqLQjyAAymA=",
         "ref": "master",
-        "rev": "1765ec4ba09d5b6ebabb0140b2c1766c8e58f62a",
-        "revCount": 1,
+        "rev": "cc1b35021ce5ce9df678f346502787c86ac09613",
+        "revCount": 4,
         "type": "git",
-        "url": "git+ssh://git@git.freeself.one/thegergo02/personal-keys"
+        "url": "git+ssh://freeself_git/thegergo02/personal-keys"
       },
       "original": {
         "type": "git",
-        "url": "git+ssh://git@git.freeself.one/thegergo02/personal-keys"
+        "url": "git+ssh://freeself_git/thegergo02/personal-keys"
       }
     },
     "nixlib": {
@@ -127,11 +127,11 @@
         "rev": "13fe81d17acd320c3b9c865ac120197c0eeb3e74",
         "revCount": 5,
         "type": "git",
-        "url": "git+ssh://git@git.freeself.one/thegergo02/personal-secrets"
+        "url": "git+ssh://freeself_git/thegergo02/personal-secrets"
       },
       "original": {
         "type": "git",
-        "url": "git+ssh://git@git.freeself.one/thegergo02/personal-secrets"
+        "url": "git+ssh://freeself_git/thegergo02/personal-secrets"
       }
     }
   },
