@@ -1,7 +1,7 @@
-{ config, inputs, ...  }:
+{ config, inputs, pkgs, ...  }:
 
 {
-  environment.etc."ssh/ssh_known_hosts".source = 
+  environment.etc."ssh/ssh_known_hosts".source = pkgs.lib.mkForce
     "${inputs.keys}/${config.networking.hostName}/ssh_known_hosts";
 
   environment.etc."ssh/id_rsa".source = 
