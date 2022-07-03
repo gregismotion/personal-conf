@@ -11,6 +11,7 @@ pushd $HOME
 echo '''
 [url "ssh://freeself_git"]
 insteadOf = "git+ssh://git@git.freeself.one"
+insteadOf = "https://git.freeself.one"
 ''' >> .gitconfig
 # NOTE: identity for pushing hardware conf
 git config --global user.name "personal-$HOSTNAME-$HOST"

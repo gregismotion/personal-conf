@@ -1,9 +1,10 @@
-{ config, pkgs, ...  }:
+{ config, pkgs, inputs, ...  }:
 
 {
   imports = [ groups/conf.nix ];
   systemd.services.manage-conf = {
     script = ''
+	# FIXME: hardcoded paths
       pushd /etc/
 
       printf "Waiting for Internet connectivity\n"
@@ -17,14 +18,15 @@
 		      *) printf "\nThe network is down or very slow\n";;
 	      esac
       done
-
-      nix flake clone git+ssh://freeself_git/thegergo02/personal-conf --dest nixos
-
+      if [[ ! -d "/etc/nixos" ]]; then
+      	git clone https://git.freeself.one/thegergo02/personal-conf
+	mv personal-conf nixos
+      fi
       # TODO: apply somewhere (but installer does not need it for example)
 
       # FIXME: only workaround, shouldn't be needed
       pushd /etc/nixos
-        nix flake clone git+ssh://freeself_git/thegergo02/personal-keys --dest keys
+        cp -r ${inputs.keys}/ keys
       popd
       popd
     '';
@@ -33,6 +35,6 @@
     after = [ "network-online.target" ];
     wants = [ "network-online.target" "systemd-networkd-wait-online.service" ];
     serviceConfig.Type = "oneshot";
-    path = [ pkgs.nix pkgs.curl ];
+    path = [ pkgs.git pkgs.curl ];
   };
 }
