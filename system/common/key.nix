@@ -10,9 +10,8 @@
   
   age.identityPaths = [ "/etc/nixos/keys/${config.networking.hostName}/id_rsa" ];
   
-  # FIXME: not possible yet
-  /*environment.etc."ssh/ssh_host_rsa_key".source = 
+  environment.etc."ssh/id_rsa".source = 
     "${inputs.keys}/${config.networking.hostName}/id_rsa";
-  environment.etc."ssh/ssh_host_rsa_key.pub".source = 
-    "${inputs.keys}/${config.networking.hostName}/id_rsa.pub";*/
+  environment.etc."ssh/id_rsa.pub".source = 
+    "${inputs.keys}/${config.networking.hostName}/id_rsa.pub";
 }
