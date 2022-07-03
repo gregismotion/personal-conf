@@ -23,12 +23,12 @@
     keys = {
       flake = false;
       type = "git";
-      url = "git+ssh://freeself_git/thegergo02/personal-keys";
+      url = "git+ssh://git@git.freeself.one/thegergo02/personal-keys";
     };
     secrets = {
       flake = false;
       type = "git";
-      url = "git+ssh://freeself_git/thegergo02/personal-secrets";
+      url = "git+ssh://git@git.freeself.one/thegergo02/personal-secrets";
     };
   };
 
