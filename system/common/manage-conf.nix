@@ -28,10 +28,7 @@
 
       # FIXME: only workaround, shouldn't be needed
       pushd /etc/nixos
-      if [[ ! -d "/etc/nixos/keys" ]]; then
-        git clone git+ssh://git@git.freeself.one/thegergo02/personal-keys
-        mv personal-keys keys
-      fi
+        nix flake clone git+ssh://freeself_git/thegergo02/personal-keys --dest keys
       popd
       popd
     '';
