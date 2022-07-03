@@ -59,6 +59,7 @@
         specialArgs = { inherit inputs; };
         modules = [
           ./system/installer/configuration.nix
+          agenix.nixosModules.age
         ];
         #format = "iso";
       };
