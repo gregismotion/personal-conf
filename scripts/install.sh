@@ -7,7 +7,7 @@ ROOT=${2:-/setup}
 echo "Applying home for $USER..."
 scripts/apply-home.sh
 
-echo "Setting up $HOST..."
+echo "Setting up $HOST on $ROOT..."
 source scripts/install/setup.sh
 
 if [[ -d "system/$HOST" ]]; then
