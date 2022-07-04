@@ -1,3 +1,3 @@
 { pkgs, ... }: {
-  imports = [ ./elems/common.nix ./elems/shell.nix ./elems/git.nix ./elems/ssh.nix ];
+  imports = [ ./elems/common.nix ./elems/shell.nix ];
 }
