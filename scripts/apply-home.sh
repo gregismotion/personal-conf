@@ -7,7 +7,7 @@ if [[ ! -f "$HOME/.config/git/config" ]]; then
 fi
 
 if [[ -d "users/$USER/" ]]; then # NOTE: fix when user has no config
-	./switch-home.sh
+	scripts/switch-home.sh
 	nix build .#homeManagerConfigurations.$USER.activationPackage
 	./result/activate
 fi
