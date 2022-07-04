@@ -27,12 +27,14 @@ if [[ -d "system/$HOST" ]]; then
 		rm $HARDWARE_CONF
 	fi
 	nixos-generate-config --root $ROOT --show-hardware-config >> $HARDWARE_CONF
+	
+	echo "Copying configuration to $ROOT..."
+	cp -r $(dirname $0)/.. $ROOT/etc/nixos
 
 	echo "Installing NixOS on $HOST..."
 	nixos-install --no-root-passwd --root $ROOT --flake .#$HOST
 	
 	echo "Fixing permissions on config directory."
-	cp -r $(dirname $0)/.. $ROOT/etc/nixos
 	chown -R root:conf $ROOT/etc/nixos
 	chmod -R g+rwx $ROOT/etc/nixos
 	
