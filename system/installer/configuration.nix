@@ -14,5 +14,5 @@
   
   system.stateVersion = "21.11";
   networking.hostName = "installer";
-  boot.loader.timeout = lib.mkForce null;
+  boot.loader.timeout = lib.mkForce 0;
 }
