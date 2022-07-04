@@ -8,18 +8,18 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" "sr_mod" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usb_storage" "sd_mod" "sr_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/bd95c461-13d7-4213-8659-9d301bbb8aaf";
+    { device = "/dev/disk/by-uuid/b19075f5-536f-42ed-b597-178af3e9c648";
       fsType = "ext4";
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/69a505e9-4b05-4ad6-8741-083216bff2e2"; }
+    [ { device = "/dev/disk/by-uuid/7fd23649-ead4-4e71-9c12-2e367f804a10"; }
     ];
 
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
