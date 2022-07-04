@@ -2,6 +2,6 @@
 
 {
   environment.variables = rec {
-    CONF_HEADLESS = "1";
+    CONF_GUI = "0";
   };
 }
