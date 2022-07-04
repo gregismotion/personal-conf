@@ -1,6 +1,6 @@
 #!/bin/sh
 
-pushd $(dirname $0)/../..
+pushd $(dirname $0)/..
 if [[ -d "$ROOT" ]]; then
 	echo "$ROOT is created, assuming manual installation..."
 else
