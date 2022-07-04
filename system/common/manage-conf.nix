@@ -18,7 +18,8 @@
 	      esac
       done
       if [[ ! -d "/etc/nixos/.git" ]]; then
-        cp -a ${self} /etc/nixos
+        cp -a ${self}/* /etc/nixos
+        cp -a ${self}/.* /etc/nixos
       fi
       # TODO: apply somewhere (but installer does not need it for example)
 
