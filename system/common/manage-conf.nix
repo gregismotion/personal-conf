@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ...  }:
+{ config, pkgs, inputs, self, ...  }:
 
 {
   imports = [ groups/conf.nix ];
@@ -18,8 +18,8 @@
 	      esac
       done
       if [[ ! -d "/etc/nixos/.git" ]]; then
-      	git clone https://git.freeself.one/thegergo02/personal-conf
-	mv personal-conf/* personal-conf/.* nixos/
+        mkdir -p /etc/nixos
+        cp -a ${self}/. /etc/nixos/.
       fi
       # TODO: apply somewhere (but installer does not need it for example)
 

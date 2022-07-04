@@ -32,7 +32,7 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, agenix, secrets, nixos-generators, ... }@inputs: 
+  outputs = { self, nixpkgs, home-manager, agenix, secrets, nixos-generators, ... }@inputs: 
   let
     system = "x86_64-linux";
 
@@ -65,7 +65,7 @@
     nixosConfigurations = {
       installer = (lib.makeOverridable lib.nixosSystem) {
         inherit pkgs;
-        specialArgs = { inherit inputs; };
+        specialArgs = { inherit inputs self; };
         modules = [
           ./system/installer/configuration.nix
           agenix.nixosModules.age
@@ -74,7 +74,7 @@
       };
       kyrios = lib.nixosSystem {
         inherit system;
-        specialArgs = { inherit inputs; };
+        specialArgs = { inherit inputs self; };
         modules = [
           ./system/kyrios/configuration.nix
           agenix.nixosModules.age
@@ -82,7 +82,7 @@
       };
       zeus = lib.nixosSystem {
         inherit system;
-        specialArgs = { inherit inputs; };
+        specialArgs = { inherit inputs self; };
         modules = [ 
           ./system/zeus/configuration.nix
           agenix.nixosModules.age
