@@ -1,5 +1,5 @@
 #!/bin/sh
-pushd $(dirname $0)/../users/$USER/
+pushd $(dirname $0)/../../users/$USER/
 	if [[ $CONF_HEADLESS != 0 ]] 
 	then
 		ln -sf headless.nix home.nix
