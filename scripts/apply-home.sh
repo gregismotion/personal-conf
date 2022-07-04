@@ -1,18 +1,13 @@
 #!/bin/sh
 pushd $(dirname $0)/..
+
+# NOTE: setup safe dir if first run
 if [[ ! -f "$HOME/.config/git/config" ]]; then
 	git config --global --add safe.directory "$(pwd)"
 fi
 
 if [[ -d "users/$USER/" ]]; then # NOTE: fix when user has no config
-	pushd users/$USER/
-	if [[ $CONF_HEADLESS != 0 ]] 
-	then
-		ln -sf headless.nix home.nix
-	else
-		ln -sf gui.nix home.nix
-	fi
-	popd
+	./switch-home.sh
 	nix build .#homeManagerConfigurations.$USER.activationPackage
 	./result/activate
 fi
