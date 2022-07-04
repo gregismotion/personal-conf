@@ -14,4 +14,5 @@
   
   system.stateVersion = "21.11";
   networking.hostName = "installer";
+  boot.loader.timeout = null;
 }
