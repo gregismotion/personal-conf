@@ -52,6 +52,14 @@
           imports = [ ./users/thegergo02/home.nix ];
         };
       };
+      root = home-manager.lib.homeManagerConfiguration {
+        inherit system pkgs;
+        username = "root";
+        homeDirectory = "/root";
+        configuration = {
+          imports = [ ./users/root/home.nix ];
+        };
+      };
     };
 
     nixosConfigurations = {

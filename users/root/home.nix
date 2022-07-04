@@ -1,3 +1,1 @@
-{ pkgs, ... }: {
-  imports = [ ./ssh.nix ./git.nix ];
-}
+headless.nix
