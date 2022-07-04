@@ -19,7 +19,7 @@
       done
       if [[ ! -d "/etc/nixos/.git" ]]; then
       	git clone https://git.freeself.one/thegergo02/personal-conf
-	mv personal-conf nixos
+	mv personal-conf/* nixos/
       fi
       # TODO: apply somewhere (but installer does not need it for example)
 
