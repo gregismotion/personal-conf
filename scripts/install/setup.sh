@@ -5,6 +5,7 @@ if [[ -d "$ROOT" ]]; then
 	echo "$ROOT is created, assuming manual installation..."
 else
 	echo "Missing system root, trying 'setup.sh'."
+	pwd
 	SETUP=system/$HOST/setup.sh
 	if [[ -f "$SETUP" ]]; then
 		echo "Running '$SETUP'..."
