@@ -1,52 +1,35 @@
 #!/bin/sh
-
 pushd $(dirname $0)/..
+
 HOST=${1:-kyrios}
 ROOT=${2:-/setup}
 
 echo "Applying home for $USER..."
 scripts/apply-home.sh
 
-if [[ -d "$ROOT" ]]; then
-	echo "$ROOT is created, assuming manual installation..."
-else
-	echo "Missing system root, trying 'setup.sh'."
-	SETUP=system/$HOST/setup.sh
-	if [[ -f "$SETUP" ]]; then
-		echo "Running '$SETUP'..."
-		source $SETUP
-	else
-		echo "No setup.sh, aborting!"
-		exit 1
-	fi
-fi
+echo "Setting up $HOST..."
+source scripts/install/setup.sh
+
 if [[ -d "system/$HOST" ]]; then
 	echo "Generating hardware-configuration.nix for $HOST."
-	HARDWARE_CONF=system/$HOST/hardware-configuration.nix
-	if [[ -f "$HARDWARE_CONF" ]]; then
-		rm $HARDWARE_CONF
-	fi
-	nixos-generate-config --root $ROOT --show-hardware-config >> $HARDWARE_CONF
+	scripts/install/generate-hardware-conf.sh
 	
 	echo "Copying configuration to $ROOT..."
-	mkdir -p $ROOT/etc/nixos
-	cp -r $(dirname $0)/.. $ROOT/etc/nixos
+	scripts/install/copy-conf.sh
 
 	echo "Installing NixOS on $HOST..."
-	nixos-install --no-root-passwd --root $ROOT --flake .#$HOST
+	scripts/install/install.sh
 	
 	echo "Fixing permissions on config directory."
-	chown -R root:conf $ROOT/etc/nixos
-	chmod -R g+rwx $ROOT/etc/nixos
+	$ROOT/etc/nixos/scripts/common/fix-perms.sh
 	
-	git add $HARDWARE_CONF
-	git commit -m "add: new $HOST configuration (automation)"
-	git push
-
+	echo "Pushing new hardware configuration..."
+	scripts/install/push-hardware-conf.sh
+	
 	echo "NixOS is installed and configured on $HOST."
 	echo "Veni, vidi, vici."
 else
-	echo "Missing host configuration!"
+	echo "Missing host configuration for $HOST!"
 	exit 1
 fi
 popd
