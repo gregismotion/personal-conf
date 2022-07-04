@@ -10,6 +10,7 @@
       url."github:".insteadOf = "https://github.com/";
       url."freeself_git:".insteadOf = "https://git.freeself.one/";
       safe.directory = "*";
+      pull.rebase = false;
     };
   };
 }
