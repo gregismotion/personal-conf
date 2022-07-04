@@ -1,7 +1,7 @@
 #!/bin/sh
 pushd $(dirname $0)/..
 
-HOST=${1:-kyrios}
+HOST=${1:-zeus}
 ROOT=${2:-/setup}
 
 echo "Applying home for $USER..."
