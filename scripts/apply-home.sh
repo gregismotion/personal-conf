@@ -12,10 +12,6 @@ if [[ -d "users/$USER/" ]]; then # NOTE: fix when user has no config
 	./result/activate
 fi
 
-# NOTE: fix when root runs script
-if [ "$UID" = "0" ] 
-then
-	chown -R root:conf . 
-	chmod -R g+rwx .
-fi
+scripts/fix-perms.sh
+
 popd
