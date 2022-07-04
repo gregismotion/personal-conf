@@ -1,6 +1,8 @@
 #!/bin/sh
 
-pushd $(dirname $0)/..
+# FIXME: hardcoded paths
+# needed cos installer...
+pushd /etc/nixos
 # NOTE: fix when root runs script
 if [ "$UID" = "0" ] 
 then
