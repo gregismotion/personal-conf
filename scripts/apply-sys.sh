@@ -1,5 +1,5 @@
 #!/bin/sh
 pushd $(dirname $0)/..
 sudo nixos-rebuild switch --flake .#
-scripts/fix-perms.sh
+scripts/common/fix-perms.sh
 popd

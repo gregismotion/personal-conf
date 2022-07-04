@@ -12,6 +12,6 @@ if [[ -d "users/$USER/" ]]; then # NOTE: fix when user has no config
 	./result/activate
 fi
 
-scripts/fix-perms.sh
+scripts/common/fix-perms.sh
 
 popd
