@@ -1,30 +1,11 @@
 #!/bin/sh
-set -e
 
 pushd $(dirname $0)/..
 HOST=${1:-kyrios}
 ROOT=${2:-/setup}
 
-# TODO: put it in better place
-# NOTE: ensure private flake's key
-pushd $HOME
-echo '''
-[url "ssh://freeself_git"]
-insteadOf = "git+ssh://git@git.freeself.one"
-insteadOf = "https://git.freeself.one"
-''' >> .gitconfig
-# NOTE: identity for pushing hardware conf
-git config --global user.name "personal-$HOSTNAME-$HOST"
-git config --global user.email "$HOSTNAME@freeself.one"
-mkdir -p .ssh
-echo '''
-Host freeself_git
-	User git
-	IdentityFile /etc/ssh/id_rsa
-	HostName git.freeself.one
-	StrictHostKeyChecking no # NOTE: not needed here
-''' >> .ssh/config
-popd
+echo "Applying home for $USER..."
+scripts/apply-home.sh
 
 if [[ -d "$ROOT" ]]; then
 	echo "$ROOT is created, assuming manual installation..."
