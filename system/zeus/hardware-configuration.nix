@@ -14,12 +14,12 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/1529c854-7a02-44a9-a0d7-69513f657fb4";
+    { device = "/dev/disk/by-uuid/cc1c5ed9-d14b-4ab0-82a1-636cc3af0cdc";
       fsType = "ext4";
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/3969641f-fb03-49a2-8e7f-d76120e32882"; }
+    [ { device = "/dev/disk/by-uuid/13093a85-481a-4dc5-8e58-4f413d61a018"; }
     ];
 
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
