@@ -29,6 +29,7 @@ if [[ -d "system/$HOST" ]]; then
 	nixos-generate-config --root $ROOT --show-hardware-config >> $HARDWARE_CONF
 	
 	echo "Copying configuration to $ROOT..."
+	mkdir -p $ROOT/etc/nixos
 	cp -r $(dirname $0)/.. $ROOT/etc/nixos
 
 	echo "Installing NixOS on $HOST..."
