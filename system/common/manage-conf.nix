@@ -17,7 +17,7 @@
 		      *) printf "\nThe network is down or very slow\n";;
 	      esac
       done
-      if [[ ! -d "/etc/nixos" ]]; then
+      if [[ ! -d "/etc/nixos/.git" ]]; then
       	git clone https://git.freeself.one/thegergo02/personal-conf
 	mv personal-conf nixos
       fi
