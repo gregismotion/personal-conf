@@ -18,9 +18,9 @@
 	      esac
       done
       if [[ ! -d "/etc/nixos/.git" ]]; then
+        rm -rf /etc/nixos
         mkdir -p /etc/nixos
-        git clone https://git.freeself.one/thegergo02/personal-conf
-        mv personal-conf/* personal-conf/.* /etc/nixos/.
+        git clone https://git.freeself.one/thegergo02/personal-conf nixos
       fi
       # TODO: apply somewhere (but installer does not need it for example)
 
