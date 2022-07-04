@@ -3,7 +3,7 @@
 {
   imports = [
     ./root.nix
-    ../common/type/installer.nix
+    ../common/installer.nix
     ../common/flakes.nix
     ../common/basic.nix
     ../common/manage-conf.nix
