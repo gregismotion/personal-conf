@@ -3,6 +3,7 @@
 {
   imports = [
     "${inputs.secrets}/users/thegergo02/password.nix"
+    ./groups/conf.nix
   ];
   
   security.sudo.wheelNeedsPassword = false;
