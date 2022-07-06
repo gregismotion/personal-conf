@@ -14,13 +14,11 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/b19075f5-536f-42ed-b597-178af3e9c648";
-      fsType = "ext4";
+    { device = "root";
+      fsType = "tmpfs";
     };
 
-  swapDevices =
-    [ { device = "/dev/disk/by-uuid/7fd23649-ead4-4e71-9c12-2e367f804a10"; }
-    ];
+  swapDevices = [ ];
 
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
