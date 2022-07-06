@@ -2,7 +2,7 @@ zpool create -f \
 	-O compression=lz4 \
 	-o ashift=12 \
 	-O relatime=on \
-	-O atime=off
+	-O atime=off \
 	-O canmount=off \
 	-O mountpoint=none \
 	-O dnodesize=auto \
