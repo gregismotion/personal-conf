@@ -9,6 +9,7 @@ else
 	if [[ -f "$SETUP" ]]; then
 		echo "Running '$SETUP'..."
 		source $SETUP
+		echo $EDIT_AFTER_HARDWARE_CONF
 	else
 		echo "No setup.sh for $HOST, aborting!"
 		exit 1

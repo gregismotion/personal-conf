@@ -9,7 +9,6 @@ scripts/apply-home.sh
 
 echo "Setting up $HOST on $ROOT..."
 source scripts/install/setup.sh
-echo $EDIT_AFTER_HARDWARE_CONF
 
 if [[ -d "system/$HOST" ]]; then
 	echo "Generating hardware-configuration.nix for $HOST."
