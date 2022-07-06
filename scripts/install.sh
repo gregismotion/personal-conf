@@ -22,6 +22,9 @@ if [[ -d "system/$HOST" ]]; then
 
 	echo "Installing NixOS on $HOST..."
 	source scripts/install/install.sh
+
+	echo "Running post-install hook..."
+	source scripts/install/post-install.sh
 	
 	echo "Fixing permissions on config directory."
 	$ROOT/etc/nixos/scripts/common/fix-perms.sh
