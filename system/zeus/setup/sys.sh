@@ -22,7 +22,7 @@ zfs create \
 	-o dedup=on \
 	${SYS_LOCAL_POOL}/var
 zfs create \
-	-o compression=no \
+	-o compression=off \
 	-V $SWAP_SIZE \
 	${SYS_LOCAL_POOL}/swap
 
