@@ -1,3 +1,5 @@
+#!/bin/sh
+
 zpool create -f \
 	-O compression=lz4 \
 	-o ashift=12 \
