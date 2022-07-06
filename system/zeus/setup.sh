@@ -16,6 +16,8 @@ DATA_SAFE_POOL=${DATA_POOL}/safe
 
 PREFIX=$(dirname $0)
 
+EDIT_AFTER_HARDWARE_CONF="${PREFIX}/hardware-configuration.nix ${PREFIX}/hardware-configuration-zfs.nix"
+
 source ${PREFIX}/setup/root.sh
 source ${PREFIX}/setup/sys.sh
 source ${PREFIX}/setup/data.sh

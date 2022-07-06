@@ -2,7 +2,13 @@
 
 {
   imports = [ ./hardware-configuration.nix ];
+
   networking.hostId = "fc3d22fc"; # NOTE: echo "<hostname>" | md5sum | head -c 8
+
+  boot.supportedFilesystems = [ "zfs" ];
+  boot.zfs.devNodes = "/dev/";
+  
+  # TODO: override swap, fileSystems
 
   services.zfs = {
     trim.enable = true;
