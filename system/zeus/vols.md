@@ -1,6 +1,3 @@
-# vfat
-- boot
-
 # tmpfs
 - root
 
@@ -9,8 +6,16 @@
 - compression=lz4
 - ashift=12
 - relatime=on
+- atime=off
+- canmount=off
+- mountpoint=none
+- dnodesize=auto
+- normalization=formD
 
 ## sys
+- autotrim=on
+- xattr=sa
+- acltype=posixacl
 
 ### erased on boot
 - var
