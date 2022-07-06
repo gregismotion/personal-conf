@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./boot.nix
     ./root.nix
     ../common/installer.nix
     ../common/type/headless.nix
@@ -14,5 +15,4 @@
   
   system.stateVersion = "21.11";
   networking.hostName = "installer";
-  boot.loader.timeout = lib.mkForce 0;
 }
