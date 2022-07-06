@@ -18,7 +18,54 @@
       fsType = "tmpfs";
     };
 
-  swapDevices = [ ];
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/BF6A-CF26";
+      fsType = "vfat";
+    };
+
+  fileSystems."/var" =
+    { device = "sys/local/var";
+      fsType = "zfs";
+    };
+
+  fileSystems."/nix" =
+    { device = "sys/safe/nix";
+      fsType = "zfs";
+    };
+
+  fileSystems."/home" =
+    { device = "sys/safe/home";
+      fsType = "zfs";
+    };
+
+  fileSystems."/persist" =
+    { device = "sys/safe/persist";
+      fsType = "zfs";
+    };
+
+  fileSystems."/data/torrent" =
+    { device = "data/local/torrent";
+      fsType = "zfs";
+    };
+
+  fileSystems."/data/share" =
+    { device = "data/local/share";
+      fsType = "zfs";
+    };
+
+  fileSystems."/data/postgres" =
+    { device = "data/safe/postgres";
+      fsType = "zfs";
+    };
+
+  fileSystems."/data/important" =
+    { device = "data/safe/important";
+      fsType = "zfs";
+    };
+
+  swapDevices =
+    [ { device = "/dev/disk/by-uuid/5a9f1e9d-6970-484c-8fb9-8fb1d2bd2990"; }
+    ];
 
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
