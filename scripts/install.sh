@@ -14,6 +14,9 @@ if [[ -d "system/$HOST" ]]; then
 	echo "Generating hardware-configuration.nix for $HOST."
 	source scripts/install/generate-hardware-conf.sh
 	
+	echo "Checking EDIT_AFTER_HARDWARE_CONF variable..."
+	source scripts/install/edit-after-hardware-conf.sh
+	
 	echo "Copying configuration to $ROOT..."
 	source scripts/install/copy-conf.sh
 
