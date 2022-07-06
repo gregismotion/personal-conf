@@ -26,12 +26,7 @@ zfs create \
 mkdir -p $ROOT/var
 mount -t zfs ${SYS_LOCAL_POOL}/var $ROOT/var
 
-zfs create \
-	-o compression=off \
-	-V $SWAP_SIZE \
-	${SYS_LOCAL_POOL}/swap
-mkswap -f -L swap ${SYS_LOCAL_POOL}/swap
-swapon ${SYS_LOCAL_POOL}/swap
+# TODO: swap
 
 zfs create $SYS_SAFE_POOL
 zfs set com.sun:auto-snapshot=true $SYS_SAFE_POOL
