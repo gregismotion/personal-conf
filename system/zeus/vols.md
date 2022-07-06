@@ -21,8 +21,6 @@
 	- acltype=posixacl
 	- mountpoint=legacy (/var)
 	- dedup=on
-- swap
-	- compression=no
 
 ### saved
 - nix

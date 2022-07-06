@@ -31,24 +31,21 @@ mount -t zfs ${SYS_LOCAL_POOL}/var $ROOT/var
 zfs create $SYS_SAFE_POOL
 zfs set com.sun:auto-snapshot=true $SYS_SAFE_POOL
 zfs create \
-	-o canmount=on \
-	-o mountpoint=/nix \
+	-o mountpoint=legacy \
 	-o dedup=on \
 	${SYS_SAFE_POOL}/nix
 mkdir -p $ROOT/nix
 mount -t zfs ${SYS_SAFE_POOL}/nix $ROOT/nix
 
 zfs create \
-	-o canmount=on \
-	-o mountpoint=/home \
+	-o mountpoint=legacy \
 	-o dedup=on \
 	${SYS_SAFE_POOL}/home
 mkdir -p $ROOT/home
 mount -t zfs ${SYS_SAFE_POOL}/home $ROOT/home
 
 zfs create \
-	-o canmount=on \
-	-o mountpoint=/persist \
+	-o mountpoint=legacy \
 	-o dedup=on \
 	${SYS_SAFE_POOL}/persist
 mkdir -p $ROOT/persist
