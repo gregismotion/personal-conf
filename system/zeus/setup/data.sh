@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # FIXME: remove force in prod!!!!
-zpool create -f \ 
+zpool create -f \
 	-O compression=lz4 \
 	-o ashift=12 \
 	-O relatime=on \
