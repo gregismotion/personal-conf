@@ -21,6 +21,7 @@
 	- acltype=posixacl
 	- canmount=on
 	- mountpoint=/var
+	- dedup=on
 - swap
 	- compression=no
 
@@ -28,12 +29,15 @@
 - nix
 	- canmount=on
 	- mountpoint=/nix
+	- dedup=on
 - home
 	- canmount=on
 	- mountpoint=/home
+	- dedup=on
 - persist
 	- canmount=on
 	- mountpoint=/persist
+	- dedup=on
 
 
 # data
@@ -49,11 +53,12 @@
 	- recordsize=1M
 	- canmount=on
 	- mountpoint=/data/share
+	- dedup=on
 
 ## backed up
 - postgres
 	- redundant_metadata=most
-	- recordsize=8K
+	- recordsize=16k
 	- logbias=throughput
 	- canmount=on
 	- mountpoint=/data/postgres
@@ -61,4 +66,5 @@
 	- recordsize=1M
 	- canmount=on
 	- mountpoint=/data/important
+	- dedup=on
 
