@@ -2,6 +2,12 @@
 
 sfdisk $SYS_DISK < $PREFIX/setup/sys.dump
 
+# NOTE: there have been problems with being too fast and partitions not being applied yet...
+echo "Syncing manually..."
+sync
+echo "Grace period for partitions to update..."
+sleep 5
+
 BOOT_PART=${SYS_DISK}-part1
 mkfs.vfat -F 32 -n boot $BOOT_PART
 mkdir -p $ROOT/boot
