@@ -14,7 +14,7 @@ DATA_POOL=data
 DATA_LOCAL_POOL=${DATA_POOL}/local
 DATA_SAFE_POOL=${DATA_POOL}/safe
 
-PREFIX=$(dirname $0)
+PREFIX=$(dirname $0)/../system/$HOST
 
 EDIT_AFTER_HARDWARE_CONF="${PREFIX}/hardware-configuration.nix ${PREFIX}/hardware-configuration-zfs.nix"
 
