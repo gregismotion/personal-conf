@@ -19,24 +19,20 @@
 - var
 	- xattr=sa
 	- acltype=posixacl
-	- canmount=on
-	- mountpoint=/var
+	- mountpoint=legacy (/var)
 	- dedup=on
 - swap
 	- compression=no
 
 ### saved
 - nix
-	- canmount=on
-	- mountpoint=/nix
+	- mountpoint=legacy (/nix)
 	- dedup=on
 - home
-	- canmount=on
-	- mountpoint=/home
+	- mountpoint=legacy (/home)
 	- dedup=on
 - persist
-	- canmount=on
-	- mountpoint=/persist
+	- mountpoint=legacy (/persist)
 	- dedup=on
 
 
@@ -46,13 +42,11 @@
 ## not backed up
 - torrent
 	- recordsize=16KB
-	- canmount=on
-	- mountpoint=/data/torrent
+	- mountpoint=legacy (/data/torrent)
 	- move to `share` as final dir
 - share
 	- recordsize=1M
-	- canmount=on
-	- mountpoint=/data/share
+	- mountpoint=legacy (/data/share)
 	- dedup=on
 
 ## backed up
@@ -60,11 +54,9 @@
 	- redundant_metadata=most
 	- recordsize=16k
 	- logbias=throughput
-	- canmount=on
-	- mountpoint=/data/postgres
+	- mountpoint=legacy (/data/postgres)
 - important
 	- recordsize=1M
-	- canmount=on
-	- mountpoint=/data/important
+	- mountpoint=legacy (/data/important)
 	- dedup=on
 
