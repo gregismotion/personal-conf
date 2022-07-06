@@ -5,7 +5,7 @@
   services.zfs = {
     trim.enable = true;
     autoScrub.enable = true;
-    autoScrub.pools = [ "sys" ]; # FIXME: this can change in setup.sh
+    autoScrub.pools = [ "sys" "data" ]; # FIXME: this can change in setup.sh
     autoSnapshot = {
       enable = true;
       monthly = 2;
