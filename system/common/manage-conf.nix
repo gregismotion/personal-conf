@@ -4,18 +4,18 @@
   imports = [ groups/conf.nix ];
   systemd.services.manage-conf = {
     script = ''
-      mkdir -p /persist
-      # FIXME: hardcoded paths
-      if [[ ! -d "/persist/nixos/.git" ]]; then
-        rm -rf /persist/nixos
-        cp -r ${self}/ /persist/nixos
+      CONF=/etc/nixos
+      mkdir -p $CONF
+      if [[ ! -d "$CONF/.git" ]]; then
+        rm -rf $CONF
+        cp -r ${self}/ $CONF
       fi
       cp -r ${inputs.keys}/ /persist/keys
       chmod -R 600 /persist/keys
-      pushd /persist/nixos
+      pushd $CONF
         git init
-        git remote add origin-auto https://git.freeself.one/thegergo02/personal-conf
-        git remote add github-auto https://github.com/thegergo02/personal-conf
+        git remote add origin-auto https://git.freeself.one/thegergo02/personal-conf || echo ignore failure
+        git remote add github-auto https://github.com/thegergo02/personal-conf || echo ignore failure
         git add .
         until curl -s -f -o /dev/null "https://nixos.org"
         do
@@ -33,7 +33,7 @@
     after = [ "network-online.target" ];
     wants = [ "network-online.target" "systemd-networkd-wait-online.service" ];
     serviceConfig.Type = "oneshot";
-    serviceConfig.RuntimeDirectory = "/persist";
+    serviceConfig.RuntimeDirectory = "/etc"; # FIXME: hardcoded paths
     serviceConfig.PermissionsStartOnly = "true";
     path = [ pkgs.git pkgs.curl ];
   };

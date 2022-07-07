@@ -3,6 +3,7 @@ pushd $(dirname $0)/..
 
 HOST=${1:-zeus}
 ROOT=${2:-/setup}
+CONF=${3:-/etc/nixos}
 
 echo "Applying home for $USER..."
 scripts/apply-home.sh
@@ -28,7 +29,7 @@ if [[ -d "system/$HOST" ]]; then
 	
 	# FIXME: hardcoded path
 	echo "Fixing permissions on config directory."
-	$ROOT/persist/nixos/scripts/common/fix-perms.sh $ROOT/persist/nixos
+	$ROOT/$CONF/scripts/common/fix-perms.sh $ROOT/$CONF
 	
 	echo "Pushing new hardware configuration..."
 	source scripts/install/push-hardware-conf.sh

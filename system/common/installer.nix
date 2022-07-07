@@ -6,7 +6,7 @@
     WAIT=10
     echo "Starting default installation in $WAIT seconds..."
     sleep $WAIT
-    /persist/nixos/scripts/install.sh
+    /etc/nixos/scripts/install.sh
     reboot
   '';
 }
