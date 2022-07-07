@@ -11,4 +11,11 @@
       monthly = 2;
     };
   };
+  
+  # FIXME: this can change in setup.sh
+  # NOTE: how big is /var? Could I assign a tmpfs to it too?...
+  boot.initrd.postDeviceCommands = lib.mkAfter ''
+    zfs rollback -r sys/local/var@blank
+  '';
+
 }
