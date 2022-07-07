@@ -2,6 +2,7 @@
 
 {
   services.minidlna = {
+    serviceConfig.WorkingDirectory = "/data/share";
     enable = true;
     mediaDirs = [
       "V,/data/media/movies"
