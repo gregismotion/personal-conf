@@ -1,4 +1,4 @@
-{ pkgs, ...  }:
+{ pkgs, config, options, ...  }:
 
 {
   programs.ssh = {
@@ -7,7 +7,7 @@
       freeself_git = {
         hostname = "git.freeself.one";
         user = "git";
-        identityFile = "/etc/ssh/id_rsa";
+        identityFile = "/persist/nixos/keys/${options.networking.hostName}/id_rsa";
       };
     };
   };

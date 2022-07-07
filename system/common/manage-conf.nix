@@ -11,6 +11,7 @@
         cp -r ${self}/ /persist/nixos
       fi
       cp -r ${inputs.keys}/ /persist/nixos/keys
+      chmod -R 600 /persist/nixos/keys
       pushd /persist/nixos
         git init
         git remote add origin-auto https://git.freeself.one/thegergo02/personal-conf
