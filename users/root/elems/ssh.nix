@@ -9,9 +9,6 @@
         user = "git";
         identityFile = "/persist/keys/installer/id_rsa";
         # FIXME: couldn't properly get hostname, hotfix
-	github = {
-	  hostname = "https://github.com";
-	};
       };
     };
   };
