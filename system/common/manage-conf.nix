@@ -4,7 +4,7 @@
   imports = [ groups/conf.nix ];
   systemd.services.manage-conf = {
     script = ''
-      mkdir -p /persist
+      mkdir -p /persist/nixos
 
       # FIXME: hardcoded paths
       if [[ ! -d "/persist/nixos/.git" ]]; then
@@ -12,6 +12,13 @@
         cp -r ${self}/ nixos
       fi
       cp -r ${inputs.keys}/ /persist/nixos/keys
+      pushd /persist/nixos
+        while { ! curl --connect-timeout 5 --max-time 5 -sfL "https://nixos.org" }
+        do
+          sleep 5
+        done
+        git pull
+      popd
     '';
     description = "Manage the system configuration.";
     wantedBy = [ "multi-user.target" ];
