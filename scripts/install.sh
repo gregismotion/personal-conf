@@ -26,8 +26,9 @@ if [[ -d "system/$HOST" ]]; then
 	echo "Running post-install hook..."
 	source scripts/install/post-install.sh
 	
+	# FIXME: hardcoded path
 	echo "Fixing permissions on config directory."
-	$ROOT/etc/nixos/scripts/common/fix-perms.sh $(dirname $0)/..
+	$ROOT/persist/nixos/scripts/common/fix-perms.sh $ROOT/persist/nixos
 	
 	echo "Pushing new hardware configuration..."
 	source scripts/install/push-hardware-conf.sh
