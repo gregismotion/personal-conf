@@ -19,7 +19,7 @@
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/0A81-6FF5";
+    { device = "/dev/disk/by-uuid/DC27-D295";
       fsType = "vfat";
     };
 
@@ -38,13 +38,18 @@
       fsType = "zfs";
     };
 
+  fileSystems."/root" =
+    { device = "sys/safe/home/root";
+      fsType = "zfs";
+    };
+
   fileSystems."/persist" =
     { device = "sys/safe/persist";
       fsType = "zfs";
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/51f95e0a-7709-4fb9-831d-df372aa9f5d0"; }
+    [ { device = "/dev/disk/by-uuid/021fc233-6c17-46a0-a008-0a58bf33eca5"; }
     ];
 
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
