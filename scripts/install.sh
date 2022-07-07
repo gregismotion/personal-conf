@@ -27,7 +27,7 @@ if [[ -d "system/$HOST" ]]; then
 	source scripts/install/post-install.sh
 	
 	echo "Fixing permissions on config directory."
-	$ROOT/etc/nixos/scripts/common/fix-perms.sh
+	$ROOT/etc/nixos/scripts/common/fix-perms.sh $(dirname $0)/..
 	
 	echo "Pushing new hardware configuration..."
 	source scripts/install/push-hardware-conf.sh

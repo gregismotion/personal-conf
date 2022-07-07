@@ -2,7 +2,7 @@
 
 # FIXME: hardcoded paths
 # needed cos installer...
-pushd /etc/nixos
+pushd $1
 # NOTE: fix when root runs script
 if [ "$UID" = "0" ] 
 then
