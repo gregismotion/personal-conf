@@ -13,13 +13,18 @@
       fi
       cp -r ${inputs.keys}/ /persist/nixos/keys
       pushd /persist/nixos
+        #git init
+        #git remote add origin https://git.freeself.one/thegergo02/personal-conf
+        #git remote add github https://github.com/thegergo02/personal-conf
+        git add .
         until curl -s -f -o /dev/null "https://nixos.org"
         do
           sleep 5
         done
-        git pull
+        git reset --hard
+        git pull -f --set-upstream origin master
         if [[ $? != 0 ]]; then
-          git pull github
+          git pull -f github
         fi
       popd
     '';
@@ -28,6 +33,7 @@
     after = [ "network-online.target" ];
     wants = [ "network-online.target" "systemd-networkd-wait-online.service" ];
     serviceConfig.Type = "oneshot";
+    serviceConfig.WorkingDirectory = "/persist";
     path = [ pkgs.git pkgs.curl ];
   };
 }

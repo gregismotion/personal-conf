@@ -13,7 +13,7 @@
     ./x.nix
     ./store.nix
     ../common/users.nix
-    #../common/manage-conf.nix
+    ../common/manage-conf.nix
     ../common/services/ssh.nix
     ../common/key.nix
   ];
