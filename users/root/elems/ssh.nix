@@ -7,7 +7,7 @@
       freeself_git = {
         hostname = "git.freeself.one";
         user = "git";
-        identityFile = "/persist/nixos/keys/${builtins.getEnv "HOST"}/id_rsa";
+        identityFile = "/persist/nixos/keys/${config.networking.hostName}/id_rsa";
       };
     };
   };
