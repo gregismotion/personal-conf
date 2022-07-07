@@ -18,7 +18,7 @@
           sleep 5
         done
         git pull
-        if [[ $? -neq 0 ]]; then
+        if [[ $? != 0 ]]; then
           git pull github
         fi
       popd
