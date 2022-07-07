@@ -10,6 +10,7 @@
         rm -rf $CONF
         cp -r ${self}/ $CONF
       fi
+      mkdir /persist
       cp -r ${inputs.keys}/ /persist/keys
       chmod -R 600 /persist/keys
       pushd $CONF
