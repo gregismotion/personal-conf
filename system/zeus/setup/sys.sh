@@ -60,6 +60,12 @@ zfs create \
 	${SYS_SAFE_POOL}/home
 mkdir -p $ROOT/home
 mount -t zfs ${SYS_SAFE_POOL}/home $ROOT/home
+zfs create \
+	-o mountpoint=legacy \
+	-o dedup=on \
+	${SYS_SAFE_POOL}/home/root
+mkdir -p $ROOT/root
+mount -t zfs ${SYS_SAFE_POOL}/home/root $ROOT/root
 
 zfs create \
 	-o mountpoint=legacy \
