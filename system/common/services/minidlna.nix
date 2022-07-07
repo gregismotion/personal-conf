@@ -1,6 +1,10 @@
 { config, pkgs, ...  }:
 
 {
+  networking.firewall = {
+    allowedTCPPorts = [ 5001 1900 ];
+    allowedUDPPorts = [ 5001 1900 ];
+  };
   services.minidlna = {
     enable = true;
     mediaDirs = [
