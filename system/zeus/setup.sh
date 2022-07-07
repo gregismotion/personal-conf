@@ -1,6 +1,4 @@
 #!/bin/sh
-set -xeu
-
 ROOT=/setup
 ROOT_SIZE=1G
 

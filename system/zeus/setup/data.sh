@@ -1,7 +1,7 @@
 #!/bin/sh
 
-# FIXME: remove force in prod!!!!
-zpool create -f \
+echo "NOTE: $DATA_POOL pool creation will fail if it already exists... "
+zpool create \
 	-O compression=lz4 \
 	-o ashift=12 \
 	-O relatime=on \
