@@ -4,31 +4,14 @@
   imports = [ groups/conf.nix ];
   systemd.services.manage-conf = {
     script = ''
-      pushd /etc/
-      # FIXME: hardcoded paths
-      printf "Waiting for Internet connectivity\n"
-      RESPONSE=0
-      while [ "$RESPONSE" != "2" ] && [ "$RESPONSE" != "3" ]
-      do
-	      RESPONSE=$(curl -s --max-time 2 -I https://git.freeself.one | sed 's/^[^ ]*  *\([0-9]\).*/\1/; 1q')
-	      case $RESPONSE in
-		      [23]) printf "\nConnectivity is up\n";;
-		      5) printf "\nAccess denied or server error\n";;
-		      *) printf "\nThe network is down or very slow\n";;
-	      esac
-      done
-      if [[ ! -d "/etc/nixos/.git" ]]; then
-        rm -rf /etc/nixos
-        mkdir -p /etc/nixos
-        git clone https://git.freeself.one/thegergo02/personal-conf nixos
-      fi
-      # TODO: apply somewhere (but installer does not need it for example)
+      mkdir -p /persist
 
-      # FIXME: only workaround, shouldn't be needed
-      pushd /etc/nixos
-        cp -r ${inputs.keys}/ keys
-      popd
-      popd
+      # FIXME: hardcoded paths
+      if [[ ! -d "/persist/nixos/.git" ]]; then
+        rm -rf /persist/nixos
+        cp -r ${self}/ nixos
+      fi
+      cp -r ${inputs.keys}/ /persist/nixos/keys
     '';
     description = "Manage the system configuration.";
     wantedBy = [ "multi-user.target" ];
