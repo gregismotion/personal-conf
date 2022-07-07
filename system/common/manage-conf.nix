@@ -10,7 +10,7 @@
         rm -rf /persist/nixos
         cp -r ${self}/ /persist/nixos
       fi
-      cp -r ${inputs.keys}/ /persist/nixos/keys
+      cp -r ${inputs.keys}/ /persist/keys
       chmod -R 600 /persist/nixos/keys
       pushd /persist/nixos
         git init
