@@ -19,7 +19,7 @@
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/C448-F852";
+    { device = "/dev/disk/by-uuid/0A81-6FF5";
       fsType = "vfat";
     };
 
@@ -43,28 +43,8 @@
       fsType = "zfs";
     };
 
-  fileSystems."/data/torrent" =
-    { device = "data/local/torrent";
-      fsType = "zfs";
-    };
-
-  fileSystems."/data/share" =
-    { device = "data/local/share";
-      fsType = "zfs";
-    };
-
-  fileSystems."/data/postgres" =
-    { device = "data/safe/postgres";
-      fsType = "zfs";
-    };
-
-  fileSystems."/data/important" =
-    { device = "data/safe/important";
-      fsType = "zfs";
-    };
-
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/a09fe7a6-aced-4e5e-968f-037706fd5027"; }
+    [ { device = "/dev/disk/by-uuid/51f95e0a-7709-4fb9-831d-df372aa9f5d0"; }
     ];
 
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
