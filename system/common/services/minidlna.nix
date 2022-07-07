@@ -1,8 +1,8 @@
 { config, pkgs, ...  }:
 
 {
+  systemd.services.jellyfin.serviceConfig.WorkingDirectory = "/data/share";
   services.minidlna = {
-    serviceConfig.WorkingDirectory = "/data/share";
     enable = true;
     mediaDirs = [
       "V,/data/media/movies"
