@@ -43,6 +43,7 @@ zfs create \
 	${SYS_LOCAL_POOL}/var
 mkdir -p $ROOT/var
 mount -t zfs ${SYS_LOCAL_POOL}/var $ROOT/var
+zfs snapshot ${SYS_LOCAL_POOL}/var@blank
 
 zfs create $SYS_SAFE_POOL
 zfs set com.sun:auto-snapshot=true $SYS_SAFE_POOL
