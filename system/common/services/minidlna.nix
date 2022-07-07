@@ -1,13 +1,12 @@
 { config, pkgs, ...  }:
 
 {
-  systemd.services.jellyfin.serviceConfig.WorkingDirectory = "/data/share";
   services.minidlna = {
     enable = true;
     mediaDirs = [
-      "V,/data/media/movies"
-      "V,/data/media/shows"
-      "V,/data/media/anime"
+      "V,/data/share/media/movies"
+      "V,/data/share/media/shows"
+      "V,/data/share/media/anime"
     ];
     friendlyName = "zeus";
     rootContainer = "B";
