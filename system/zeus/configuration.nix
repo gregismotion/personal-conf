@@ -12,9 +12,13 @@
     ./store.nix
     ../common/users.nix
     ../common/key.nix
+    ./firewall.nix
   ] ++ [
-    ../common/services/minidlna.nix
     ../common/services/ssh.nix
+
+    ../common/services/samba.nix
+
+    ../common/services/minidlna.nix
   ];
   
   system.stateVersion = "21.11";
