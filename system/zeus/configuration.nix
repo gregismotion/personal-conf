@@ -3,7 +3,7 @@
 {
   imports = [
     ../common/type/headless.nix
-    ./zfs.nix
+    ./storage.nix
     ./hardware-configuration.nix
     ./boot.nix
     ../common/flakes.nix
