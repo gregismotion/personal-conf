@@ -13,7 +13,7 @@
       fi
       cp -r ${inputs.keys}/ /persist/nixos/keys
       pushd /persist/nixos
-        while { ! curl --connect-timeout 5 --max-time 5 -sfL "https://nixos.org" }
+        until curl -s -f -o /dev/null "https://nixos.org"
         do
           sleep 5
         done
