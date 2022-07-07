@@ -6,5 +6,5 @@
       password = "nixos";
     };
   };
-  services.getty.autologinUser = lib.mkDefault "root";
+  services.getty.autologinUser = lib.mkForce "root";
 }
