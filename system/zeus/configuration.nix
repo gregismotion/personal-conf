@@ -16,7 +16,7 @@
   ] ++ [
     ../common/services/ssh.nix
 
-    ../common/services/samba.nix
+    #../common/services/samba.nix
 
     ../common/services/minidlna.nix
   ];
