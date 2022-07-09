@@ -43,11 +43,11 @@
 
     pkgs = import nixpkgs {
       inherit system;
+      overlays = [ zitadel.overlays.default ];
     };
     
     lib = nixpkgs.lib;
 
-    externOverlays = [ zitadel.overlays.default ];
   in {
     # TODO: read dynamically
     homeManagerConfigurations = {
