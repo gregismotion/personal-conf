@@ -46,6 +46,8 @@
     };
     
     lib = nixpkgs.lib;
+
+    overlays = (attrValues self.overlays) ++ [ zitadel.overlays.default ];
   in {
     # TODO: read dynamically
     homeManagerConfigurations = {
@@ -92,7 +94,6 @@
           ./system/zeus/configuration.nix
           agenix.nixosModules.age
         ];
-        nixpkgs.overlays = [ zitadel.overlays ];
       };
     };
   };
