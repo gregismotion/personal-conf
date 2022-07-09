@@ -11,5 +11,8 @@
       ExternalDomain: 192.168.1.110
     '';
   };
-  config.services.cockroachdb22.enable = true;
+  config.services.cockroachdb22 = {
+    enable = true;
+    workingDirectory = /data/postgres/cockroach;
+  };
 }
