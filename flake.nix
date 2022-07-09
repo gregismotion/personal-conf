@@ -19,6 +19,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    cockroachdb = {
+      url = "github:thegergo02/cockroachdb-prebuild-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     zitadel = {
       url = "github:thegergo02/zitadel-prebuild-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -37,7 +41,17 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, agenix, secrets, nixos-generators, zitadel, ... }@inputs: 
+  outputs = { 
+    self, 
+    nixpkgs, 
+    home-manager, 
+    agenix, 
+    secrets, 
+    nixos-generators, 
+    cockroachdb,
+    zitadel,
+    ... 
+  }@inputs: 
   let
     system = "x86_64-linux";
 
@@ -93,6 +107,7 @@
         modules = [ 
           ./system/zeus/configuration.nix
           agenix.nixosModules.age
+          cockroachdb.nixosModules.default
           zitadel.nixosModules.default
         ];
       };
