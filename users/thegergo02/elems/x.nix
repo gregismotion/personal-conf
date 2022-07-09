@@ -4,10 +4,10 @@
     vscodium pkgs.godot
     redshift
     keepassxc
-    rofi maim slock
+    rofi maim
     dconf
   ];
-
+  
   gtk = {
     enable = true;
     theme = {
