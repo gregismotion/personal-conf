@@ -20,7 +20,7 @@
     };
 
     zitadel = {
-      url = "github:viperml/zitadel-prebuild-flake";
+      url = "github:thegergo02/zitadel-prebuild-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     
