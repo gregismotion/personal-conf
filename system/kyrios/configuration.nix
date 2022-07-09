@@ -25,4 +25,8 @@
     hostName = "kyrios";
     interfaces.wlp0s16f1u1.useDHCP = true;
   };
+
+  networking.extraHosts = ''
+    192.168.110 zeus
+  '';
 }
