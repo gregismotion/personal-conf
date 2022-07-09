@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./boot.nix
+    #./boot.nix
     ./root.nix
     ../common/installer.nix
     ../common/type/headless.nix
