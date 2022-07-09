@@ -80,7 +80,7 @@
         #format = "iso";
       };
       kyrios = lib.nixosSystem {
-        inherit system;
+        inherit system pkgs;
         specialArgs = { inherit inputs self; };
         modules = [
           ./system/kyrios/configuration.nix
@@ -88,7 +88,7 @@
         ];
       };
       zeus = lib.nixosSystem {
-        inherit system;
+        inherit system pkgs;
         specialArgs = { inherit inputs self; };
         modules = [ 
           ./system/zeus/configuration.nix
