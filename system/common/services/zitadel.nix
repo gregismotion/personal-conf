@@ -1,7 +1,7 @@
 { config, ... }:
 
 {
-  config.services.zitadel = {
+  services.zitadel = {
     enable = true;
   };
 }
