@@ -115,7 +115,8 @@
         "keys": "keys",
         "nixos-generators": "nixos-generators",
         "nixpkgs": "nixpkgs",
-        "secrets": "secrets"
+        "secrets": "secrets",
+        "zitadel": "zitadel"
       }
     },
     "secrets": {
@@ -132,6 +133,26 @@
       "original": {
         "type": "git",
         "url": "git+ssh://freeself_git/thegergo02/personal-secrets"
+      }
+    },
+    "zitadel": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1657291157,
+        "narHash": "sha256-Xc3J9leeCiApFlMau944ATNIkJ7EY79nTytSobotJFU=",
+        "owner": "thegergo02",
+        "repo": "zitadel-prebuild-flake",
+        "rev": "fb1ec99dae43077064b306fd068a06f6cfe64c26",
+        "type": "github"
+      },
+      "original": {
+        "owner": "thegergo02",
+        "repo": "zitadel-prebuild-flake",
+        "type": "github"
       }
     }
   },
