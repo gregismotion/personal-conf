@@ -43,7 +43,6 @@
 
     pkgs = import nixpkgs {
       inherit system;
-      overlays = [ zitadel.overlays.default ];
     };
     
     lib = nixpkgs.lib;
