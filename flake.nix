@@ -37,7 +37,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, agenix, secrets, nixos-generators, ... }@inputs: 
+  outputs = { self, nixpkgs, home-manager, agenix, secrets, nixos-generators, zitadel, ... }@inputs: 
   let
     system = "x86_64-linux";
 
