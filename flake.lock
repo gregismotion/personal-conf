@@ -20,6 +20,26 @@
         "type": "github"
       }
     },
+    "cockroachdb": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1657369067,
+        "narHash": "sha256-M7zryO10FOuOa1kuFDCnX4vk9RiN07Ls/kB6QztnxUg=",
+        "owner": "thegergo02",
+        "repo": "cockroachdb-prebuild-flake",
+        "rev": "fb2449c02ff75674462440b62d22010c22b2195b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "thegergo02",
+        "repo": "cockroachdb-prebuild-flake",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -111,6 +131,7 @@
     "root": {
       "inputs": {
         "agenix": "agenix",
+        "cockroachdb": "cockroachdb",
         "home-manager": "home-manager",
         "keys": "keys",
         "nixos-generators": "nixos-generators",
