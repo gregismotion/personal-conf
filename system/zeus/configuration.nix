@@ -16,6 +16,8 @@
   ] ++ [
     ../common/services/ssh.nix
 
+    ../common/services/zitadel.nix
+
     #../common/services/samba.nix
 
     ../common/services/minidlna.nix

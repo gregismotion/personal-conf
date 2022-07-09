@@ -18,6 +18,11 @@
       url = "github:nix-community/nixos-generators";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    zitadel = {
+      url = "github:thegergo02/zitadel-prebuild-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     
     # FIXME: hardcoded ssh config host
     keys = {
