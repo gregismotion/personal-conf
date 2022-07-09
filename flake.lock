@@ -95,11 +95,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1656608236,
-        "narHash": "sha256-ZRsimvpsuj5FI0R7uuTVq7vV/C3zKn4Kcfm6roOaNjA=",
+        "lastModified": 1656782578,
+        "narHash": "sha256-1eMCBEqJplPotTo/SZ/t5HU6Sf2I8qKlZi9MX7jv9fw=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "399c514226ac48d7855838d0777f47f2fa59730a",
+        "rev": "573603b7fdb9feb0eb8efc16ee18a015c667ab1b",
         "type": "github"
       },
       "original": {
@@ -142,11 +142,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1657291157,
-        "narHash": "sha256-Xc3J9leeCiApFlMau944ATNIkJ7EY79nTytSobotJFU=",
+        "lastModified": 1657352899,
+        "narHash": "sha256-gHwqDBWTgtO+4W/6ZXxavS3AKVS55BBCrevGavPbYDM=",
         "owner": "thegergo02",
         "repo": "zitadel-prebuild-flake",
-        "rev": "fb1ec99dae43077064b306fd068a06f6cfe64c26",
+        "rev": "1318a537fa96b744861a2f65d994cf94edf4db9d",
         "type": "github"
       },
       "original": {
