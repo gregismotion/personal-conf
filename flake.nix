@@ -43,6 +43,7 @@
 
     pkgs = import nixpkgs {
       inherit system;
+      config.allowUnfree = true; # FIXME: this'll always allow unfree, even if not needed...
     };
     
     lib = nixpkgs.lib;
