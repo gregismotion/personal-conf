@@ -4,7 +4,7 @@
     vscodium pkgs.godot
     redshift
     keepassxc
-    rofi maim
+    rofi maim slock
     dconf
   ];
 
