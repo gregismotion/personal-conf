@@ -1,5 +1,5 @@
 { config, pkgs, ... }: 
 {
   imports = [ ./zfs.nix ];
-  fileSystems."/".options = [ "defaults"  "size=1G" "mode=755" ];
+  fileSystems."/".options = [ "defaults"  "size=3G" "mode=755" ];
 }
