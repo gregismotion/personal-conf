@@ -92,6 +92,7 @@
           ./system/zeus/configuration.nix
           agenix.nixosModules.age
         ];
+        nixpkgs.overlays = [ zitadel.overlays ];
       };
     };
   };
