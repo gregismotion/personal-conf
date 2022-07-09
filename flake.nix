@@ -93,6 +93,7 @@
         modules = [ 
           ./system/zeus/configuration.nix
           agenix.nixosModules.age
+          zitadel.nixosModules.default
         ];
       };
     };
