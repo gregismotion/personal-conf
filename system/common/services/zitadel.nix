@@ -8,7 +8,7 @@
       ExternalSecure: false
       TLS:
         Enabled: false
-      ExternalDomain: 192.168.1.110
+      ExternalDomain: '192.168.1.110'
       S3DefaultInstance:
         CustomDomain: '192.168.1.110'
     '';
