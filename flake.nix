@@ -47,7 +47,7 @@
     
     lib = nixpkgs.lib;
 
-    overlays = (attrValues self.overlays) ++ [ zitadel.overlays.default ];
+    externOverlays = [ zitadel.overlays.default ];
   in {
     # TODO: read dynamically
     homeManagerConfigurations = {
