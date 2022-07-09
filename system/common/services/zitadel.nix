@@ -8,6 +8,7 @@
       ExternalSecure: false
       TLS:
         Enabled: false
+      ExternalDomain: 192.168.1.110
     '';
   };
   config.services.cockroachdb22.enable = true;
