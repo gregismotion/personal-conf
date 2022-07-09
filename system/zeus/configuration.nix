@@ -23,7 +23,7 @@
     ../common/services/minidlna.nix
   ];
   
-  system.stateVersion = "21.11";
+  system.stateVersion = "22.05";
   time.timeZone = "Europe/Budapest";
   
   networking.hostName = "zeus";
