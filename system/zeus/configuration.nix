@@ -15,6 +15,8 @@
     ./firewall.nix
   ] ++ [
     ../common/services/ssh.nix
+    
+    ./services/traefik.nix
 
     ../common/services/zitadel.nix
 
