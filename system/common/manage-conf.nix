@@ -24,9 +24,7 @@
         done
         git reset --hard
         git pull --set-upstream origin-auto master || echo ignore failure
-        if [[ $? != 0 ]]; then
-          git pull github-auto
-        fi
+        git pull github-auto master
       popd
     '';
     description = "Manage the system configuration.";
