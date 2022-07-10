@@ -18,7 +18,7 @@
           provider = "njalla";
           resolvers = "1.1.1.1:53,8.8.8.8:53";
         };
-        storage = "acme.json";
+        storage = "${config.services.traefik.dataDir}/acme.json";
       };
 
       api.dashboard = true;
