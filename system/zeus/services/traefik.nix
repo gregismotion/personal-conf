@@ -4,6 +4,7 @@
 
 {
   config.services.traefik = {
+    enable = true;
     dataDir = "/persist/traefik/";
     staticConfigOptions = {
       entrypoints = {
