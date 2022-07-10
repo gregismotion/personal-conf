@@ -10,6 +10,12 @@
         identityFile = "/persist/keys/installer/id_rsa";
         # FIXME: couldn't properly get hostname, hotfix
       };
+      github = {
+        hostname = "github.com";
+        user = "git";
+        identityFile = "/persist/keys/installer/id_rsa";
+        # FIXME: couldn't properly get hostname, hotfix
+      };
     };
   };
 }
