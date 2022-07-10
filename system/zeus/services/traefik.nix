@@ -6,6 +6,7 @@
   config.services.traefik = {
     enable = true;
     dataDir = "/persist/traefik/";
+    log.level = "INFO";
     staticConfigOptions = {
       entrypoints = {
         web.address = ":80";
