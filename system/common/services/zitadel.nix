@@ -8,9 +8,9 @@
       ExternalSecure: false
       TLS:
         Enabled: false
-      ExternalDomain: zeus
+      ExternalDomain: 192.168.1.110
       S3DefaultInstance:
-        CustomDomain: zeus
+        CustomDomain: 192.168.1.110
     '';
   };
   config.services.cockroachdb22 = {
