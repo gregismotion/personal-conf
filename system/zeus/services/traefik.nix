@@ -40,6 +40,12 @@
             entrypoints = "web";
             middlewares = "redirect-to-https";
           };
+          sso = {
+            rule = "Host(`sso.freeself.one`)";
+            tls = true;
+            entrypoints = "websecure";
+            loadbalancer.server.port = 8080;
+          };
         };
         middlewares.redirect-to-https.redirectscheme.scheme = "https";
       };
