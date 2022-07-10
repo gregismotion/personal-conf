@@ -16,7 +16,7 @@
 
       api.dashboard = true;
 
-      traefik.http.routers.traefik.tls = "true";
+      #traefik.http.routers.traefik.tls = "true";
       traefik.http.routers.traefik.tls.certresolver = "le";                                                     traefik.http.routers.traefik.tls.domains = [ {
         main = "freeself.one"; 
         sans = "*.freeself.one";
