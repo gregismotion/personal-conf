@@ -8,9 +8,9 @@
       ExternalSecure: false
       TLS:
         Enabled: false
-      ExternalDomain: zitadel.freeself.one
+      ExternalDomain: sso.freeself.one
       S3DefaultInstance:
-        CustomDomain: zitadel.freeself.one
+        CustomDomain: sso.freeself.one
     '';
   };
   config.services.cockroachdb22 = {
