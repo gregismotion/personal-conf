@@ -3,55 +3,57 @@
 }:
 
 {
-  networking.firewall.allowedTCPPorts = [ 80 443 ];
-  config.services.traefik = {
-    enable = true;
-    dataDir = "/persist/traefik/";
-    staticConfigOptions = {
-      log.level = "INFO";
-      entrypoints = {
-        web.address = ":80";
-        websecure.address = ":443";
-      };
-
-      certificatesresolvers.le.acme = {
-        email = "varigergo05@gmail.com";
-        dnschallenge = {
-          provider = "njalla";
-          resolvers = "1.1.1.1:53,8.8.8.8:53";
+  config = {
+    networking.firewall.allowedTCPPorts = [ 80 443 ];
+    services.traefik = {
+      enable = true;
+      dataDir = "/persist/traefik/";
+      staticConfigOptions = {
+        log.level = "INFO";
+        entrypoints = {
+          web.address = ":80";
+          websecure.address = ":443";
         };
-        storage = "${config.services.traefik.dataDir}/acme.json";
-      };
 
-      api.dashboard = true;
+        certificatesresolvers.le.acme = {
+          email = "varigergo05@gmail.com";
+          dnschallenge = {
+            provider = "njalla";
+            resolvers = "1.1.1.1:53,8.8.8.8:53";
+          };
+          storage = "${config.services.traefik.dataDir}/acme.json";
+        };
 
-      traefik.http = {
-        routers = {
-          traefik = {
-            rule = "Host(`traefik.freeself.one`)";
-            tls = {
-              certresolver = "le";
-              domains = [ {
-                main = "freeself.one"; 
-                sans = "*.freeself.one";
-              } ];
+        api.dashboard = true;
+
+        traefik.http = {
+          routers = {
+            traefik = {
+              rule = "Host(`traefik.freeself.one`)";
+              tls = {
+                certresolver = "le";
+                domains = [ {
+                  main = "freeself.one"; 
+                  sans = "*.freeself.one";
+                } ];
+              };
+              service = "api@internal";
             };
-            service = "api@internal";
+            redirs = {
+              rule = "hostregexp(`{host:.+}`)";
+              entrypoints = "web";
+              middlewares = "redirect-to-https";
+            };
+            sso = {
+              rule = "Host(`sso.freeself.one`)";
+              tls = true;
+              entrypoints = "websecure";
+              loadbalancer.server.port = 8080;
+            };
           };
-          redirs = {
-            rule = "hostregexp(`{host:.+}`)";
-            entrypoints = "web";
-            middlewares = "redirect-to-https";
-          };
-          sso = {
-            rule = "Host(`sso.freeself.one`)";
-            tls = true;
-            entrypoints = "websecure";
-            loadbalancer.server.port = 8080;
-          };
+          middlewares.redirect-to-https.redirectscheme.scheme = "https";
         };
-        middlewares.redirect-to-https.redirectscheme.scheme = "https";
       };
-    };
-  }; 
+    }; 
+  };
 }
