@@ -163,11 +163,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1657371003,
-        "narHash": "sha256-/40doRAtM/AwWPqXdP5qHzSRHSjiEn6/GQiucoyCcmo=",
+        "lastModified": 1657458738,
+        "narHash": "sha256-7kQgP2fzyu60z7Ml5VxJX/KBchKcECEi6ap8y2miAYY=",
         "owner": "thegergo02",
         "repo": "zitadel-prebuild-flake",
-        "rev": "6ad166f57cc278604b1b7f545a52a7211e78eb10",
+        "rev": "12d2d3306308ce27413dee37acb6403fee7702c7",
         "type": "github"
       },
       "original": {
