@@ -3,6 +3,7 @@
 }:
 
 {
+  networking.firewall.allowedTCPPorts = [ 80 443 ];
   config.services.traefik = {
     enable = true;
     dataDir = "/persist/traefik/";
