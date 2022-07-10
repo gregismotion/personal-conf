@@ -23,7 +23,7 @@
       } ];
       traefik.http.routers.traefik.service = "api@internal";
 
-      - traefik.http.middlewares.redirect-to-https.redirectscheme.scheme = "https";
+      traefik.http.middlewares.redirect-to-https.redirectscheme.scheme = "https";
       traefik.http.routers.redirs.rule = "hostregexp(`{host:.+}`)";
       traefik.http.routers.redirs.entrypoints = "web";
       traefik.http.routers.redirs.middlewares = "redirect-to-https";
