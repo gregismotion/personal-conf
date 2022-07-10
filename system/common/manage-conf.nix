@@ -23,7 +23,7 @@
           sleep 5
         done
         git reset --hard
-        git pull --set-upstream origin-auto master
+        git pull --set-upstream origin-auto master || echo ignore failure
         if [[ $? != 0 ]]; then
           git pull github-auto
         fi
