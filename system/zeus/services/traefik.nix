@@ -17,6 +17,7 @@
     services.traefik = {
       enable = true;
       dataDir = "/persist/traefik/";
+      staticConfigFile = "${config.services.traefik.dataDir}/test.toml";
       staticConfigOptions = {
         log.level = "DEBUG";
         entrypoints = {
