@@ -5,7 +5,7 @@
 }:
 
 {
-  imports = [ "${inputs.secrets}/services/njalla/token.nix" ];
+  imports = [ "${inputs.secrets}/services/njalla/njalla.nix" ];
   config = {
     networking.firewall.allowedTCPPorts = [ 80 443 ];
     systemd.services.traefik.serviceConfig.EnvironmentFile = pkgs.writeText ".env" ''
