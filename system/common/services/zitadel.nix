@@ -3,9 +3,9 @@
 {
   config.services.zitadel = {
     enable = true;
-    masterKey = "p1Au595d5UKy6nPC802FFfpn8Kgc6wuV";
+    masterKey = "p1Au595d5UKy6nPC802FFfpn8Kgc6wuV"; # FIXME: make this secret
     extraConfig = ''
-      ExternalSecure: false
+      ExternalSecure: true
       TLS:
         Enabled: false
       ExternalDomain: sso.freeself.one
