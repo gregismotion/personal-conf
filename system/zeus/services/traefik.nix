@@ -18,7 +18,7 @@
       enable = true;
       dataDir = "/persist/traefik/";
       staticConfigOptions = {
-        log.level = "INFO";
+        log.level = "DEBUG";
         entrypoints = {
           web.address = ":80";
           websecure.address = ":443";
