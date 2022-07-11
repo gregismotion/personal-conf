@@ -43,7 +43,7 @@
                 certresolver = "njalla";
                 domains = [ {
                   main = "freeself.one"; 
-                  sans = "*.freeself.one";
+                  sans = [ "*.freeself.one" ];
                 } ];
               };
               service = "api@internal";
