@@ -16,7 +16,6 @@
         log.level = "DEBUG";
 
         api.dashboard = true;
-        api.insecure = true;
 
         entrypoints = {
           web.address = ":80";
