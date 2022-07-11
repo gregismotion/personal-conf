@@ -52,7 +52,13 @@
             };
             sso = {
               rule = "Host(`sso.freeself.one`)";
-              tls = true;
+              tls = {
+                certresolver = "njalla";
+                domains = [ {
+                  main = "freeself.one"; 
+                  sans = [ "*.freeself.one" ];
+                } ];
+              };
               entrypoints = [ "websecure" ];
               service = "zitadel";
             };
