@@ -6,12 +6,11 @@
     masterKey = "p1Au595d5UKy6nPC802FFfpn8Kgc6wuV"; # FIXME: make this secret
     extraConfig = ''
       ExternalSecure: true
-      TLS:
-        Enabled: false
       ExternalDomain: sso.freeself.one
       S3DefaultInstance:
         CustomDomain: sso.freeself.one
     '';
+    extraCommand = "--tlsMode external";
   };
   config.services.cockroachdb22 = {
     enable = true;
