@@ -8,11 +8,6 @@
     networking.firewall.allowedTCPPorts = [ 80 443 ];
     systemd.services.traefik.serviceConfig.EnvironmentFile = pkgs.writeText ".env" ''
       NJALLA_TOKEN=0d4135046a33a5737ef560ede0c6d6ac2170fa6c
-      NJALLA_TTL=1
-      NJALLA_POLLING_INTERVAL=5
-      NJALLA_PROPAGATION_TIMEOUT=1200
-      CF_API_EMAIL=varigergo05@gmail.com
-      CF_API_KEY=TD6DZifvDmpbLFJBAFrdnutSjg2qMaoy_nPng8Ax
     '';
     services.traefik = {
       enable = true;
