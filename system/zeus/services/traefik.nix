@@ -6,7 +6,7 @@
 {
   config = {
     networking.firewall.allowedTCPPorts = [ 80 443 ];
-    services.traefik.serviceConfig.EnvironmentFile = pkgs.writeText ".env" ''
+    systemd.services.traefik.serviceConfig.EnvironmentFile = pkgs.writeText ".env" ''
       NJALLA_TOKEN=0d4135046a33a5737ef560ede0c6d6ac2170fa6c
       NJALLA_TTL=1
       NJALLA_POLLING_INTERVAL=5
