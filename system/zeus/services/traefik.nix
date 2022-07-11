@@ -7,7 +7,7 @@
   config = {
     networking.firewall.allowedTCPPorts = [ 80 443 ];
     systemd.services.traefik.serviceConfig.EnvironmentFile = pkgs.writeText ".env" ''
-      NJALLA_TOKEN=0d4135046a33a5737ef560ede0c6d6ac2170fa6c
+      NJALLA_TOKEN=4082e5d2f5e60aa08a503757b0002492e0e6022c
     '';
     services.traefik = {
       enable = true;
