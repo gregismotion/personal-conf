@@ -1,7 +1,7 @@
 { config, inputs, ... }:
 
 {
-  imports = [ "${inputs.secrets}/services/zitadel/masterkey.nix" ];
+  imports = [ "${inputs.secrets}/services/zitadel/zitadel.nix" ];
   config.services.zitadel = {
     enable = true;
     extraConfig = ''
