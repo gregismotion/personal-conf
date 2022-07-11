@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, inputs, ... }:
 
 {
   imports = [ "${inputs.secrets}/services/zitadel/masterkey.nix" ];
