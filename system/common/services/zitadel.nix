@@ -10,7 +10,7 @@
       S3DefaultInstance:
         CustomDomain: sso.freeself.one
     '';
-    #extraConfigFile = config.age.secrets.services-zitadel-masterkey.path;
+    extraConfigFile = config.age.secrets.services-zitadel-masterkey.path;
     # FIXME: finish secrets
     extraCommand = "--tlsMode external --masterkey 4Nilm7RZJ9rOu0oBcnFm1cTtWKIpj9Jz";
   };
