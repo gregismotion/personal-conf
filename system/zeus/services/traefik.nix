@@ -24,7 +24,7 @@
           websecure.address = ":443";
         };
 
-        certificatesresolvers.le.acme = {
+        certificatesresolvers.njalla.acme = {
           email = "varigergo05@gmail.com";
           dnschallenge = {
             provider = "njalla";
@@ -40,7 +40,7 @@
             traefik = {
               rule = "Host(`traefik.freeself.one`)";
               tls = {
-                certresolver = "le";
+                certresolver = "njalla";
                 domains = [ {
                   main = "freeself.one"; 
                   sans = "*.freeself.one";
