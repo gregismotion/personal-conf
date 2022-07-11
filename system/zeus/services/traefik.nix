@@ -47,16 +47,18 @@
             };
             redirs = {
               rule = "hostregexp(`{host:.+}`)";
-              entrypoints = "web";
+              entrypoints = [ "web" ];
               middlewares = "redirect-to-https";
             };
             sso = {
               rule = "Host(`sso.freeself.one`)";
               tls = true;
-              entrypoints = "websecure";
+              entrypoints = [ "websecure" ];
               service = "zitadel";
-              loadbalancer.server.port = 8080;
             };
+          };
+          services = {
+            sso.loadBalancer.servers = [{ url = "http://localhost:8080"; }];
           };
           middlewares.redirect-to-https.redirectscheme.scheme = "https";
         };
