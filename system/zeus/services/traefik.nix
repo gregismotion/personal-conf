@@ -67,7 +67,10 @@
             };
           };
           services = {
-            sso.loadBalancer.servers = [{ url = "http://localhost:8080"; }];
+            sso.loadBalancer = {
+              servers = [{ url = "http://localhost:8080"; }];
+              passHostHeader = true;
+            };
           };
           middlewares.redirect-to-https.redirectscheme.scheme = "https";
         };
