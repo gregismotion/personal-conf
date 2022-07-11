@@ -62,7 +62,7 @@
                   sans = [ "*.freeself.one" ];
                 } ];
               };
-              entrypoints = [ "websecure" ];
+              entrypoints = [ "websecure" "web" ];
               service = "sso";
             };
           };
