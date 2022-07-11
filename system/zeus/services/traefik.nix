@@ -60,7 +60,7 @@
                 } ];
               };
               entrypoints = [ "websecure" ];
-              service = "zitadel";
+              service = "sso";
             };
           };
           services = {
