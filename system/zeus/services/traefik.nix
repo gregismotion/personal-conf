@@ -7,7 +7,6 @@
   imports = [ "${inputs.secrets}/services/njalla/token.nix" ];
   config = {
     networking.firewall.allowedTCPPorts = [ 80 443 ];
-    # FIXME: make this secret
     systemd.services.traefik.serviceConfig.EnvironmentFile = pkgs.writeText ".env" ''
       NJALLA_TOKEN_FILE=${config.age.secrets.services-njalla-token.path}
       NJALLA_TTL=1
