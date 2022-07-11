@@ -32,7 +32,7 @@
             provider = "njalla";
             resolvers = [ "1.1.1.1:53" "8.8.8.8:53" ];
           };
-          caServer = "https://acme-staging-v02.api.letsencrypt.org/directory";
+          #caServer = "https://acme-staging-v02.api.letsencrypt.org/directory";
           storage = "${config.services.traefik.dataDir}/acme.json";
         };
       };
