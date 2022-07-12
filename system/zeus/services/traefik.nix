@@ -89,7 +89,7 @@
               passHostHeader = true;
             };
             git.loadBalancer = {
-              servers = [{ url = "http://localhost:${services.gitea.httpPort}"; }];
+              servers = [{ url = "http://localhost:${config.services.gitea.httpPort}"; }];
               passHostHeader = true;
             };
           };
