@@ -7,18 +7,26 @@
     allowedTCPPorts = [ 5357 445 139 ];
     allowedUDPPorts = [ 3702 137 138 ];
   };
-  /*systemd.services.add-samba-users = {
+  systemd.services.add-samba-users = {
     wantedBy = [ "multi-user.target" ];
     serviceConfig.Type = "oneshot";
     description = "Add SMB users.";
-    path = [ pkgs.samba  ];
+    path = [ pkgs.samba ];
+    # TODO: dynamic user creation...
+    # FIXME: secrets
     script = ''
-      smbpasswd -a varitomi12
-      smbpasswd -a thegergo02
-      create dirs...
-      stdin...
+      pushd /data/homes
+      (echo "test"; echo "test") | smbpasswd -s -a thegergo02
+      mkdir -p thegergo02
+
+      (echo "test"; echo "test") | smbpasswd -s -a varitomi12
+      mkdir -p varitomi12
+
+      chown -R root:smb /data/homes
+      chmod -R g+rw /data/homes
+      popd
     '';
-  };*/
+  };
   services = {
     samba-wsdd.enable = true; # NOTE: win10 compatability
     samba = {
