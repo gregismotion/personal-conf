@@ -15,7 +15,7 @@
             Username: 'admin'
             Password: 'TestTestTestTest1!'
     '';
-    extraCommand = "--tlsMode external --masterkeyFile ${config.age.secrets.services-zitadel-masterkey.path}";
+    extraCommand = "--tlsMode external --steps ${config.age.secrets.services-zitadel-admin.path} --masterkeyFile ${config.age.secrets.services-zitadel-masterkey.path}";
   };
   config.services.cockroachdb22 = {
     enable = true;
