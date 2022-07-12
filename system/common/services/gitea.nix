@@ -45,7 +45,6 @@
         SECRET_KEY = "9lSkZAYA1LNsF8R0GsTI9aHkOGwB40DhP4nttJnsxzijLHy3Fd1LWze7zKc8yQU7";
         REVERSE_PROXY_LIMIT = 1;
         REVERSE_PROXY_TRUSTED_PROXIES = "*";
-        INTERNAL_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE2MzU3Mzk3NDZ9.jyqUDrZMbLOEE_eMXUCfhMDHDL5BuXZuoM7UY4MO1Ks";
         PASSWORD_HASH_ALGO = "pbkdf2";
       };
       service = {
