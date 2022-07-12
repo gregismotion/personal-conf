@@ -18,7 +18,7 @@
     stateDir = "/persist/gitea";
     dump = {
       enable = true;
-      backupDir = "/data/important/gitea/backup"
+      backupDir = "/data/important/gitea/backup";
     };
     #ssh.enable = true;
     lfs = {
