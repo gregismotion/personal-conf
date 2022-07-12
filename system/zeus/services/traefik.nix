@@ -73,7 +73,7 @@
           };
           services = {
             sso.loadBalancer = {
-              servers = [{ url = "http://localhost:8080"; }]; # TODO: use url specified in config
+              servers = [{ url = "h2c://zitadel:8080"; }]; # TODO: use url specified in config
               passHostHeader = true;
             };
           };
