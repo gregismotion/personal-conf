@@ -52,6 +52,7 @@
           "directory mask" = "0755";
         };
         homes = {
+          path = "/data/homes/%s";
           browseable = "no";
           "read only" = "no";
           "guest ok" = "no";
