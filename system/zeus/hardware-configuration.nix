@@ -68,6 +68,11 @@
       fsType = "zfs";
     };
 
+  fileSystems."/data/homes" =
+    { device = "data/safe/homes";
+      fsType = "zfs";
+    };
+
   swapDevices =
     [ { device = "/dev/disk/by-uuid/0a5c97f9-fdf9-4260-ab2e-d20f13e7b6ff"; }
     ];

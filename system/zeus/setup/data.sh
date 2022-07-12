@@ -49,3 +49,11 @@ zfs create \
 	${DATA_SAFE_POOL}/important
 mkdir -p $ROOT/data/important
 mount -t zfs ${DATA_SAFE_POOL}/important $ROOT/data/important
+
+zfs create \
+	-o recordsize=1M \
+	-o mountpoint=legacy \
+	-o dedup=on \
+	${DATA_SAFE_POOL}/homes
+mkdir -p $ROOT/data/homes
+mount -t zfs ${DATA_SAFE_POOL}/homes $ROOT/data/homes
