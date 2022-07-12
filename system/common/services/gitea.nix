@@ -28,7 +28,7 @@
     cookieSecure = true;
     disableRegistration = true;
     settings = {
-      RUN_MODE = "prod";
+      #RUN_MODE = "prod";
       picture = {
         AVATAR_UPLOAD_PATH = "/data/important/gitea/avatars";
         REPOSITORY_AVATAR_UPLOAD_PATH = "/data/important/gitea/repo-avatars";
