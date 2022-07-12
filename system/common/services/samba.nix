@@ -1,4 +1,8 @@
-{ config, pkgs, ... }:
+{ config, 
+  pkgs, 
+  inputs,
+  ... 
+}:
 
 {
   imports = [ ../groups/smb.nix ] ++ [ "${inputs.secrets}/services/smb/smb.nix" ];
