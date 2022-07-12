@@ -13,7 +13,7 @@
         Org:
           Human:
             Username: 'admin'
-            Password: 'test'
+            Password: 'TestTestTestTest'
     '';
     extraCommand = "--tlsMode external --masterkeyFile ${config.age.secrets.services-zitadel-masterkey.path}";
   };
