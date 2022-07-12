@@ -6,20 +6,30 @@
     allowedTCPPorts = [ 5357 445 139 ];
     allowedUDPPorts = [ 3702 137 138 ];
   };
+  /*systemd.services.add-samba-users = {
+    wantedBy = [ "multi-user.target" ];
+    serviceConfig.Type = "oneshot";
+    description = "Add SMB users.";
+    path = [ pkgs.samba  ];
+    script = ''
+      smbpasswd -a varitomi12
+      smbpasswd -a thegergo02
+    '';
+  };*/
   services = {
     samba-wsdd.enable = true; # NOTE: win10 compatability
+    syncPasswordsByPam = true;
     samba = {
       enable = true;
       openFirewall = true;
       securityType = "user";
+      # NOTE: netbios name can only be 15 chars, be careful
       extraConfig = ''
-        workgroup = WORKGROUP
+        workgroup = personal-conf
         server role = standalone server
-        server string = smbnix
-        netbios name = smbnix
-        security = user 
-        #use sendfile = yes
-        #max protocol = smb2
+        server string = ${networking.hostName}-samba
+        netbios name = ${networking.hostName}
+        max protocol = smb3
         hosts allow = 192.168.0. 127.0.0.1 localhost
         hosts deny = 0.0.0.0/0
         guest account = nobody
@@ -33,18 +43,14 @@
           "guest ok" = "yes";
           "create mask" = "0644";
           "directory mask" = "0755";
-          "force user" = "username";
-          "force group" = "groupname";
         };
         important = {
           path = "/data/important";
           browseable = "yes";
           "read only" = "no";
-          "guest ok" = "yes";
+          "guest ok" = "no";
           "create mask" = "0644";
           "directory mask" = "0755";
-          "force user" = "username";
-          "force group" = "groupname";
         };
         homes = {
           browseable = "no";
