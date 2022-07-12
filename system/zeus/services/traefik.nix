@@ -23,7 +23,13 @@
         api.dashboard = true;
 
         entrypoints = {
-          web.address = ":80";
+          web = {
+            address = ":80";
+            http.redirections.entryPoint = {
+              to = "websecure";
+              scheme = "https";
+            };
+          };
           websecure.address = ":443";
         };
 
@@ -33,6 +39,7 @@
             provider = "njalla";
             resolvers = [ "1.1.1.1:53" "8.8.8.8:53" ];
           };
+          # NOTE: when testing, uncomment to use staging servers (severe risk of being rate-limited)
           #caServer = "https://acme-staging-v02.api.letsencrypt.org/directory";
           storage = "${config.services.traefik.dataDir}/acme.json";
         };
@@ -51,11 +58,6 @@
               };
               service = "api@internal";
             };
-            redirs = {
-              rule = "hostregexp(`{host:.+}`)";
-              entrypoints = [ "web" ];
-              middlewares = "redirect-to-https";
-            };
             sso = {
               rule = "Host(`sso.freeself.one`)";
               tls = {
@@ -71,11 +73,10 @@
           };
           services = {
             sso.loadBalancer = {
-              servers = [{ url = "http://localhost:8080"; }];
+              servers = [{ url = "http://localhost:8080"; }]; # TODO: use url specified in config
               passHostHeader = true;
             };
           };
-          middlewares.redirect-to-https.redirectscheme.scheme = "https";
         };
       };
     }; 
