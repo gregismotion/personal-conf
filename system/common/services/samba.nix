@@ -19,7 +19,6 @@
       (echo "test"; echo "test") | smbpasswd -s -a thegergo02
       mkdir -p thegergo02
 
-      useradd --shell /usr/sbin/nologin varitomi12
       (echo "test"; echo "test") | smbpasswd -s -a varitomi12
       mkdir -p varitomi12
 
