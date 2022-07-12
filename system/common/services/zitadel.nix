@@ -10,7 +10,7 @@
       S3DefaultInstance:
         CustomDomain: sso.freeself.one
     '';
-    extraCommand = "--tlsMode external --masterkeyFromFile ${config.age.secrets.services-zitadel-masterkey.path}";
+    extraCommand = "--tlsMode external --masterkeyFile ${config.age.secrets.services-zitadel-masterkey.path}";
   };
   config.services.cockroachdb22 = {
     enable = true;
