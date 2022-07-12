@@ -59,7 +59,7 @@
         DEFAULT_KEEP_EMAIL_PRIVATE = false;
         DEFAULT_ALLOW_CREATE_ORGANIZATION = true;
         DEFAULT_ENABLE_TIMETRACKING = true;
-        NO_REPLY_ADDRESS = "noreply.localhost"
+        NO_REPLY_ADDRESS = "noreply.localhost";
       };
       mailer.ENABLED = false;
     };
