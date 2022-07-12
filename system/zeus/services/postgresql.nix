@@ -6,7 +6,7 @@
 {
   services.postgresql = {
     enable = true;
-    #dataDir = /data/postgres/11;
+    dataDir = "/data/postgres/11";
     authentication = ''
       local gitea all ident map=gitea-users
     '';
