@@ -15,18 +15,49 @@
     domain = "git.freeself.one";
     rootUrl = "https://${config.services.gitea.domain}";
     httpPort = 3000;
-    extraConfig = let
-      docutils =
-	pkgs.python37.withPackages (ps: with ps; [
-	  docutils
-	  pygments
-      ]);
-    in ''
-      [markup.restructuredtext]
-      ENABLED = true
-      FILE_EXTENSIONS = .rst
-      RENDER_COMMAND = ${docutils}/bin/rst2html.py
-      IS_INPUT_FILE = false
-    '';    
-  };
+    stateDir = "/persist/gitea";
+    dump = {
+      enable = true;
+      backupDir = "/data/important/gitea/backup"
+    };
+    #ssh.enable = true;
+    lfs = {
+      enable = true;
+      contentDir = "/data/important/gitea/lfs";
+    };
+    cookieSecure = true;
+    disableRegistration = true;
+    settings = {
+      RUN_MODE = "prod";
+      picture = {
+        AVATAR_UPLOAD_PATH = "/data/important/gitea/avatars";
+        REPOSITORY_AVATAR_UPLOAD_PATH = "/data/important/gitea/repo-avatars";
+        DISABLE_GRAVATAR = true;
+        ENABLE_FEDERATED_AVATAR = false;
+      };
+      attachment = {
+        PATH = "/data/important/gitea/attachments";
+      };
+      security = {
+        INSTALL_LOCK = true;
+        SECRET_KEY = ;# TODO: secret
+        REVERSE_PROXY_LIMIT = 1;
+        REVERSE_PROXY_TRUSTED_PROXIES = *;
+        INTERNAL_TOKEN = ;# TODO: secret
+        PASSWORD_HASH_ALGO = "pbkdf2";
+      };
+      service = {
+        DISABLE_REGISTRATION = false;
+        REQUIRE_SIGNIN_VIEW = false;
+        REGISTER_EMAIL_CONFIRM = false;
+        ENABLE_NOTIFY_MAIL = false;
+        ALLOW_ONLY_EXTERNAL_REGISTRATION = true;
+        ENABLE_CAPTCHA = false;
+        DEFAULT_KEEP_EMAIL_PRIVATE = false;
+        DEFAULT_ALLOW_CREATE_ORGANIZATION = true;
+        DEFAULT_ENABLE_TIMETRACKING = true;
+        NO_REPLY_ADDRESS = "noreply.localhost"
+      };
+      mailer.ENABLED = false;
+    };
 }
