@@ -7,23 +7,23 @@
     allowedTCPPorts = [ 5357 445 139 ];
     allowedUDPPorts = [ 3702 137 138 ];
   };
+  imports = [ "${inputs.secrets}/services/smb/smb.nix" ];
   systemd.services.add-samba-users = {
     wantedBy = [ "multi-user.target" ];
     serviceConfig.Type = "oneshot";
     description = "Add SMB users.";
     path = [ pkgs.samba ];
     # TODO: dynamic user creation...
-    # FIXME: secrets
     script = ''
       pushd /data/homes
-      (echo "test"; echo "test") | smbpasswd -s -a thegergo02
-      mkdir -p thegergo02
+        (cat ${config.age.secrets.services-smb-thegergo02.path}; cat ${config.age.secrets.services-smb-thegergo02.path}) | smbpasswd -s -a thegergo02
+        mkdir -p thegergo02
 
-      (echo "test"; echo "test") | smbpasswd -s -a varitomi12
-      mkdir -p varitomi12
+        (cat ${config.age.secrets.services-smb-varitomi12.path}; cat ${config.age.secrets.services-smb-varitomi12.path}) | smbpasswd -s -a varitomi12
+        mkdir -p varitomi12
 
-      chown -R root:smb /data/homes
-      chmod -R g+rw /data/homes
+        chown -R root:smb /data/homes
+        chmod -R g+rw /data/homes
       popd
     '';
   };
