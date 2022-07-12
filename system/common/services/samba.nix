@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 
 {
+  imports = [ ../groups/smb.nix ];
   networking.firewall = {
     allowPing = true;
     allowedTCPPorts = [ 5357 445 139 ];
@@ -14,6 +15,8 @@
     script = ''
       smbpasswd -a varitomi12
       smbpasswd -a thegergo02
+      create dirs...
+      stdin...
     '';
   };*/
   services = {
@@ -33,6 +36,7 @@
         hosts deny = 0.0.0.0/0
         guest account = nobody
         map to guest = never
+        force group = smb
       '';
       shares = {
         share = {
