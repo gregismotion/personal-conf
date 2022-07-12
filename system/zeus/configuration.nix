@@ -17,8 +17,11 @@
     ../common/services/ssh.nix
     
     ./services/traefik.nix
+    ./services/postgresql.nix
 
     ../common/services/zitadel.nix
+
+    ../common/services/gitea.nix
 
     ../common/services/samba.nix
 

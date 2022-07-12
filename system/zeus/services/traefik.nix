@@ -70,10 +70,26 @@
               entrypoints = [ "websecure" "web" ];
               service = "sso";
             };
+            git = {
+              rule = "Host(`git.freeself.one`)";
+              tls = {
+                certresolver = "njalla";
+                domains = [ {
+                  main = "freeself.one"; 
+                  sans = [ "*.freeself.one" ];
+                } ];
+              };
+              entrypoints = [ "websecure" "web" ];
+              service = "git";
+            };
           };
           services = {
             sso.loadBalancer = {
               servers = [{ url = "h2c://localhost:8080"; }]; # TODO: use url specified in config
+              passHostHeader = true;
+            };
+            git.loadBalancer = {
+              servers = [{ url = "http://localhost:${services.gitea.httpPort}"; }];
               passHostHeader = true;
             };
           };
