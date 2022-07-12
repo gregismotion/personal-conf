@@ -10,10 +10,6 @@
       ExternalPort: 443
       S3DefaultInstance:
         CustomDomain: sso.freeself.one
-        Org:
-          Human:
-            Username: 'admin'
-            Password: 'TestTestTestTest1!'
     '';
     extraCommand = "--tlsMode external --steps ${config.age.secrets.services-zitadel-admin.path} --masterkeyFile ${config.age.secrets.services-zitadel-masterkey.path}";
   };
