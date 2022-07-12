@@ -18,7 +18,6 @@
   };*/
   services = {
     samba-wsdd.enable = true; # NOTE: win10 compatability
-    syncPasswordsByPam = true;
     samba = {
       enable = true;
       openFirewall = true;
