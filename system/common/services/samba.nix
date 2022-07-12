@@ -27,8 +27,8 @@
       extraConfig = ''
         workgroup = personal-conf
         server role = standalone server
-        server string = ${networking.hostName}-samba
-        netbios name = ${networking.hostName}
+        server string = ${config.networking.hostName}-samba
+        netbios name = ${config.networking.hostName}
         max protocol = smb3
         hosts allow = 192.168.0. 127.0.0.1 localhost
         hosts deny = 0.0.0.0/0
