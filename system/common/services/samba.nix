@@ -1,13 +1,13 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ ../groups/smb.nix ];
+  imports = [ ../groups/smb.nix ] ++ [ "${inputs.secrets}/services/smb/smb.nix" ];
+
   networking.firewall = {
     allowPing = true;
     allowedTCPPorts = [ 5357 445 139 ];
     allowedUDPPorts = [ 3702 137 138 ];
   };
-  imports = [ "${inputs.secrets}/services/smb/smb.nix" ];
   systemd.services.add-samba-users = {
     wantedBy = [ "multi-user.target" ];
     serviceConfig.Type = "oneshot";
