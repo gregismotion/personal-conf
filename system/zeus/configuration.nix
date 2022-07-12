@@ -20,7 +20,7 @@
 
     ../common/services/zitadel.nix
 
-    #../common/services/samba.nix
+    ../common/services/samba.nix
 
     ../common/services/minidlna.nix
   ];

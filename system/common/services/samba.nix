@@ -47,6 +47,11 @@
           "force user" = "username";
           "force group" = "groupname";
         };
+        homes = {
+          browseable = "no";
+          "read only" = "no";
+          "guest ok" = "no";
+        };
       };
     };
   };
