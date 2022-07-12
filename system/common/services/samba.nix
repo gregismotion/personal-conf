@@ -68,6 +68,7 @@
           browseable = "no";
           "read only" = "no";
           "guest ok" = "no";
+          "valid users" = "%S";
         };
       };
     };
