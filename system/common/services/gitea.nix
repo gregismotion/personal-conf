@@ -13,7 +13,7 @@
       type = "postgres";
     };
     domain = "git.freeself.one";
-    rootUrl = "https://${services.gitea.domain}";
+    rootUrl = "https://${config.services.gitea.domain}";
     httpPort = 3000;
     extraConfig = let
       docutils =
