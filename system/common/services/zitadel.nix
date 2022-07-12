@@ -6,9 +6,10 @@
     enable = true;
     extraConfig = ''
       ExternalSecure: true
-      ExternalDomain: 'sso.freeself.one'
+      ExternalDomain: sso.freeself.one
+      ExternalPort: 443
       S3DefaultInstance:
-        CustomDomain: 'sso.freeself.one'
+        CustomDomain: sso.freeself.one
     '';
     extraCommand = "--tlsMode external --masterkeyFile ${config.age.secrets.services-zitadel-masterkey.path}";
   };
