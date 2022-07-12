@@ -63,4 +63,5 @@
       };
       mailer.ENABLED = false;
     };
+  };
 }
