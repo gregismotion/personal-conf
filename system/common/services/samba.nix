@@ -1,7 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  services.  
   networking.firewall = {
     allowPing = true;
     allowedTCPPorts = [ 5357 445 139 ];
