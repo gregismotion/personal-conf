@@ -38,12 +38,15 @@
       attachment = {
         PATH = "/data/important/gitea/attachments";
       };
+      # FIXME: secrets
+      server.LFS_JTW_SECRET = "U6FJIX4JSfJh1KqdGUVC1T0D1cp08cqfmsANPGXNLnQ";
       security = {
         INSTALL_LOCK = true;
-        SECRET_KEY = ;# TODO: secret
+        SECRET_KEY = "9lSkZAYA1LNsF8R0GsTI9aHkOGwB40DhP4nttJnsxzijLHy3Fd1LWze7zKc8yQU7";
         REVERSE_PROXY_LIMIT = 1;
         REVERSE_PROXY_TRUSTED_PROXIES = *;
-        INTERNAL_TOKEN = ;# TODO: secret
+        INTERNAL_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE2MzU3Mzk3NDZ9.jyqUDrZ
+        MbLOEE_eMXUCfhMDHDL5BuXZuoM7UY4MO1Ks";
         PASSWORD_HASH_ALGO = "pbkdf2";
       };
       service = {
