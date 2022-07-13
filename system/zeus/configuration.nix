@@ -26,6 +26,7 @@
     ../common/services/samba.nix
 
     ../common/services/minidlna.nix
+    ../common/services/jellyfin.nix
   ];
   
   system.stateVersion = "22.05";
