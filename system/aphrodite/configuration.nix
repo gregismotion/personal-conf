@@ -10,6 +10,7 @@
     ../common/manage-conf.nix
     ../common/key.nix
     ../common/hardware/rpi4-gpu.nix
+    ../common/services/ssh.nix
   ];
   
   system.stateVersion = "22.05";
