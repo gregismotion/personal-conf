@@ -6,6 +6,12 @@
 }:
 
 {
+  let
+    cfg = services.gitea;
+  in
+    # TODO: report to upstream
+    systemd.services.gitea.serviceConfig.ReadWritePaths = [ cfg.dump.backupDir cfg.repositoryRoot cfg.stateDir cfg.lfs.contentDir cfg.settings.picture.AVATAR_UPLOAD_PATH cfg.settings.picture.REPOSITORY_AVATAR_UPLOAD_PATH cfg.attachment.PATH ];
+
   services.gitea = {
     enable = true;
     appName = "Gitea: FREESELF";
@@ -53,7 +59,7 @@
         REQUIRE_SIGNIN_VIEW = false;
         REGISTER_EMAIL_CONFIRM = false;
         ENABLE_NOTIFY_MAIL = false;
-        #ALLOW_ONLY_EXTERNAL_REGISTRATION = true;
+        ALLOW_ONLY_EXTERNAL_REGISTRATION = true;
         ENABLE_CAPTCHA = false;
         DEFAULT_KEEP_EMAIL_PRIVATE = false;
         DEFAULT_ALLOW_CREATE_ORGANIZATION = true;
