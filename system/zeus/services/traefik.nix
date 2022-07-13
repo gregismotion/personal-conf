@@ -83,6 +83,18 @@
               entrypoints = [ "websecure" "web" ];
               service = "git";
             };
+            jellyfin = {
+              rule = "Host(`jellyfin.freeself.one`)";
+              tls = {
+                certresolver = "njalla";
+                domains = [ {
+                  main = "freeself.one"; 
+                  sans = [ "*.freeself.one" ];
+                } ];
+              };
+              entrypoints = [ "websecure" "web" ];
+              service = "jellyfin";
+            };
           };
           services = {
             sso.loadBalancer = {
@@ -91,6 +103,10 @@
             };
             git.loadBalancer = {
               servers = [{ url = "http://localhost:${toString config.services.gitea.httpPort}"; }];
+              passHostHeader = true;
+            };
+            jellyfin.loadBalancer = {
+              servers = [{ url = "http://localhost:8096"; }];
               passHostHeader = true;
             };
           };
