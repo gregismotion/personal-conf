@@ -21,7 +21,7 @@
       };
       freeself_git = {
         hostname = "git.freeself.one";
-        user = "git";
+        user = "gitea";
         identityFile = "~/.ssh/id_rsa_zeus";
       };
     };
