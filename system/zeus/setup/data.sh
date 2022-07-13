@@ -57,3 +57,10 @@ zfs create \
 	${DATA_SAFE_POOL}/homes
 mkdir -p $ROOT/data/homes
 mount -t zfs ${DATA_SAFE_POOL}/homes $ROOT/data/homes
+
+zfs create \
+	-o mountpoint=legacy \
+	-o dedup=on \
+	${DATA_SAFE_POOL}/persist
+mkdir -p $ROOT/data/persist
+mount -t zfs ${DATA_SAFE_POOL}/persist $ROOT/data/persist
