@@ -107,6 +107,14 @@
           agenix.nixosModules.age
         ];
       };
+      aphrodite = lib.nixosSystem {
+        inherit system pkgs;
+        specialArgs = { inherit inputs self; };
+        modules = [
+          ./system/aphrodite/configuration.nix
+          agenix.nixosModules.age
+        ];
+      };
       zeus = lib.nixosSystem {
         inherit system pkgs;
         specialArgs = { inherit inputs self; };
