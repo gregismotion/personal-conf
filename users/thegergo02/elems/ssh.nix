@@ -22,7 +22,7 @@
       freeself_git = {
         hostname = "git.freeself.one";
         user = "git";
-        identityFile = "~/.ssh/id_raspi_zeus";
+        identityFile = "~/.ssh/id_rsa_zeus";
       };
     };
   };
