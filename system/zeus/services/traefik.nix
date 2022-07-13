@@ -56,6 +56,7 @@
                   sans = [ "*.freeself.one" ];
                 } ];
               };
+              entrypoints = [ "websecure" "web" ];
               service = "api@internal";
             };
             sso = {
