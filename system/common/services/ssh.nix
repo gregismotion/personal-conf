@@ -20,7 +20,7 @@
         }
       ];
       extraConfig = ''
-        AllowGroups ssh
+        AllowGroups ssh gitea
       '';
   };
 }
