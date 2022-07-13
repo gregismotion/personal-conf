@@ -39,6 +39,12 @@
       type = "git";
       url = "git+ssh://freeself_git/thegergo02/personal-secrets";
     };
+
+    rpi4-config = {
+      flake = false;
+      type = "tarball";
+      url = "https://github.com/NixOS/nixos-hardware/archive/936e4649098d6a5e0762058cb7687be1b2d90550.tar.gz";
+    };
   };
 
   outputs = { 

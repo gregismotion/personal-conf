@@ -64,11 +64,11 @@
     "keys": {
       "flake": false,
       "locked": {
-        "lastModified": 1656843007,
+        "lastModified": 1657703935,
         "narHash": "sha256-+NOh82pphxKvtG2KRCQ+57xDDPb0nRqPeqLQjyAAymA=",
         "ref": "master",
-        "rev": "cc1b35021ce5ce9df678f346502787c86ac09613",
-        "revCount": 4,
+        "rev": "310279b29fc24cb10690cb55e82f5b69b88efa7d",
+        "revCount": 1,
         "type": "git",
         "url": "git+ssh://freeself_git/thegergo02/personal-keys"
       },
@@ -136,8 +136,21 @@
         "keys": "keys",
         "nixos-generators": "nixos-generators",
         "nixpkgs": "nixpkgs",
+        "rpi4-config": "rpi4-config",
         "secrets": "secrets",
         "zitadel": "zitadel"
+      }
+    },
+    "rpi4-config": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-nG54zqew1hSRG4jUsPGNlhl9Sy9Vl/8OLxGR2oMB4Bk=",
+        "type": "tarball",
+        "url": "https://github.com/NixOS/nixos-hardware/archive/936e4649098d6a5e0762058cb7687be1b2d90550.tar.gz"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://github.com/NixOS/nixos-hardware/archive/936e4649098d6a5e0762058cb7687be1b2d90550.tar.gz"
       }
     },
     "secrets": {

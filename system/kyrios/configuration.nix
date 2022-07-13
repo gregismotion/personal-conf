@@ -9,7 +9,7 @@
     ./boot.nix
     ../common/flakes.nix
     ../common/basic.nix
-    ./phome-wireless.nix
+    ../common/phome-wireless.nix
     ./x.nix
     ./store.nix
     ../common/users.nix
