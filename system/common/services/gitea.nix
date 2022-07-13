@@ -18,25 +18,25 @@
     stateDir = "/persist/gitea";
     dump = {
       enable = true;
-      backupDir = "/data/important/gitea/backup";
+      backupDir = "/data/persist/gitea/backup";
     };
     #ssh.enable = true;
     lfs = {
       enable = true;
-      contentDir = "/data/important/gitea/lfs";
+      contentDir = "/data/persist/gitea/lfs";
     };
     cookieSecure = true;
     disableRegistration = true;
     settings = {
       #RUN_MODE = "prod";
       picture = {
-        AVATAR_UPLOAD_PATH = "/data/important/gitea/avatars";
-        REPOSITORY_AVATAR_UPLOAD_PATH = "/data/important/gitea/repo-avatars";
+        AVATAR_UPLOAD_PATH = "/data/persist/gitea/avatars";
+        REPOSITORY_AVATAR_UPLOAD_PATH = "/data/persist/gitea/repo-avatars";
         DISABLE_GRAVATAR = true;
         ENABLE_FEDERATED_AVATAR = false;
       };
       attachment = {
-        PATH = "/data/important/gitea/attachments";
+        PATH = "/data/persist/gitea/attachments";
       };
       # FIXME: secrets
       server.LFS_JTW_SECRET = "U6FJIX4JSfJh1KqdGUVC1T0D1cp08cqfmsANPGXNLnQ";
