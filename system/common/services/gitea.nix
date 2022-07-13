@@ -6,7 +6,7 @@
 }:
 
 {
-  systemd.services.gitea.serviceConfig.ReadWritePaths = [ services.gitea.dump.backupDir services.gitea.repositoryRoot services.gitea.stateDir services.gitea.lfs.contentDir services.gitea.settings.picture.AVATAR_UPLOAD_PATH services.gitea.settings.picture.REPOSITORY_AVATAR_UPLOAD_PATH services.gitea.attachment.PATH ];
+  systemd.services.gitea.serviceConfig.ReadWritePaths = [ config.services.gitea.dump.backupDir config.services.gitea.repositoryRoot config.services.gitea.stateDir config.services.gitea.lfs.contentDir config.services.gitea.settings.picture.AVATAR_UPLOAD_PATH config.services.gitea.settings.picture.REPOSITORY_AVATAR_UPLOAD_PATH config.services.gitea.attachment.PATH ];
 
   services.gitea = {
     enable = true;
