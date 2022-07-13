@@ -8,7 +8,7 @@
 {
   services.jellyfin.enable = true;
   systemd.services.jellyfin.serviceConfig = {
-    StateDirectory = "/data/persist/jellyfin/state";
-    CacheDirectory = "/data/persist/jellyfin/cache";
+    StateDirectory = lib.mkForce "/data/persist/jellyfin/state";
+    CacheDirectory = lib.mkForce "/data/persist/jellyfin/cache";
   };
 }
