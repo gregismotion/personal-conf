@@ -22,7 +22,7 @@
 
     systemd.services.zitadel.serviceConfig.After = "cockroachdb22.service";
     systemd.services.cockroachdb22.postStart = ''
-      sleep 10
+      sleep 100
     '';
 
     services.cockroachdb22 = {
