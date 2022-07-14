@@ -21,8 +21,7 @@
     };
     systemd.services.zitadel.serviceConfig.After = "cockroachdb22.service";
     systemd.services.cockroachdb22 = {
-      path = [ pkgs.coreutils ];
-      serviceConfig.ExecStartPost="timeout 30 sh -c 'while ! ss -H -t -l -n sport = :26257 | grep -q \"^LISTEN.*:26257\"; do sleep 1; done'";
+      serviceConfig.ExecStartPost="sh -c 'while ! ss -H -t -l -n sport = :26257 | grep -q \"^LISTEN.*:26257\"; do sleep 1; done'";
     };
     services.cockroachdb22 = {
       enable = true;
