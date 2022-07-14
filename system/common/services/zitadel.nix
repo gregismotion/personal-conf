@@ -1,4 +1,9 @@
-{ config, inputs, ... }:
+{ 
+  config, 
+  inputs,
+  pkgs,
+  ... 
+}:
 
 {
   imports = [ "${inputs.secrets}/services/zitadel/zitadel.nix" ];
