@@ -21,7 +21,7 @@
     };
     systemd.services.zitadel.serviceConfig.After = "cockroachdb22.service";
     systemd.services.cockroachdb22 = {
-      socketOptions = {
+      socketConfig = {
         ListenStream = "26257";
         Accept = false;
       };
