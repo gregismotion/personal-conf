@@ -21,7 +21,10 @@
     };
     systemd.services.zitadel.serviceConfig.After = "cockroachdb22.service";
     systemd.services.cockroachdb22 = {
-      serviceConfig.ExecStartPost="while ! ss -H -t -l -n sport = :26257 | grep -q \"^LISTEN.*:26257\"; do sleep 1; done";
+      serviceConfig.Socket = {
+        ListenStream = "26257";
+        Accept = false;
+      };
     };
     services.cockroachdb22 = {
       enable = true;
