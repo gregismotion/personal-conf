@@ -7,22 +7,17 @@
       github = {
         hostname = "github.com";
         user = "git";
-        identityFile = "~/.ssh/id_raspi_git";
+        identityFile = "id_rsa_thegergo02t";
       };
-      freeself = {
-        hostname = "freeself.one";
-        user = "pi";
-        identityFile = "~/.ssh/id_rsa_raspi";
-      };
-      zeus = {
+      zeus_local = {
         hostname = "192.168.1.110";
         user = "thegergo02";
-        identityFile = "~/.ssh/id_rsa_zeus";
+        identityFile = "id_rsa_thegergo02";
       };
       freeself_git = {
         hostname = "git.freeself.one";
         user = "gitea";
-        identityFile = "~/.ssh/id_rsa_zeus";
+        identityFile = "id_rsa_thegergo02";
       };
     };
   };
