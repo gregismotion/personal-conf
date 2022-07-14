@@ -28,7 +28,7 @@
         Service = "cockroachdb22.service";
       };
     };
-    systemd.services.cockroachdb22.unitConfig.Requires = [ "cockroachdb22.socket" ];
+    systemd.services.zitadel.unitConfig.Requires = [ "cockroachdb22.socket" ];
     services.cockroachdb22 = {
       enable = true;
       workingDirectory = /data/postgres/cockroach;
