@@ -19,19 +19,16 @@
       '';
       extraCommand = "--tlsMode external --steps ${config.age.secrets.services-zitadel-admin.path} --masterkeyFile ${config.age.secrets.services-zitadel-masterkey.path}";
     };
-    systemd.services.zitadel.serviceConfig.After = "cockroachdb22.socket";
-    systemd.sockets.cockroachdb22 = {
-      wantedBy = [ "sockets.target" ];
-      socketConfig = {
-        ListenStream = "26257";
-        Accept = false;
-        Service = "cockroachdb22.service";
-      };
-    };
-    systemd.services.zitadel.unitConfig.Requires = [ "cockroachdb22.socket" ];
+
+    systemd.services.zitadel.serviceConfig.After = "cockroachdb22.service";
+    systemd.services.cockroachdb22.postStart = ''
+      sleep 1
+    '';
+
     services.cockroachdb22 = {
       enable = true;
       workingDirectory = /data/postgres/cockroach;
     };
+
   };
 }
