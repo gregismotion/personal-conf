@@ -22,11 +22,11 @@
 
     systemd.services.zitadel.serviceConfig.After = "cockroachdb22.service";
     systemd.services.zitadel.serviceConfig.Requires = "cockroachdb22.service";
-
+    
+    systemd.services.cockroachdb22.serviceConfig.type = "oneshot";
     services.cockroachdb22 = {
       enable = true;
       workingDirectory = /data/postgres/cockroach;
-      serviceConfig.type = "oneshot";
     };
 
   };
