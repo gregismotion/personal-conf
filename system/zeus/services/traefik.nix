@@ -145,7 +145,7 @@
               passHostHeader = true;
             };
           };
-          middlewares = {
+          /*middlewares = {
             auth-headers = {
 	      sslRedirect = true;
 	      stsSeconds = 315360000;
@@ -161,14 +161,14 @@
               address = "https://oauthproxy.freeself.one/oauth2/auth";
               trustForwardHeader = true;
             };
-            /*oauth-errors = {
+            oauth-errors = {
               errors = {
                 status = [ "401-403" ];
                 service = "oauth-backend";
                 query = "/oauth2/sign_in";
               };
-            };*/
-          };
+            };
+          };*/
         };
       };
     }; 
