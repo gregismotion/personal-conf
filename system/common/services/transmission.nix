@@ -16,7 +16,7 @@
       incomplete-dir = "/data/torrent/incomplete";
       incomplete-dir-enabled = true;
 
-      home = "/persist/transmission";
     };
+    home = "/persist/transmission";
   };
 }
