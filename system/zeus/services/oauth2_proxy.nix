@@ -9,7 +9,7 @@
   services.oauth2_proxy = {
     enable = true;
     provider = "oidc";
-    redirectUrl = "https://sso.freeself.one/oauth2/callback";
+    redirectURL = "https://sso.freeself.one/oauth2/callback";
     upstream = [
       "https://transmission.freeself.one"
     ];
