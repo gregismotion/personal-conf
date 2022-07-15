@@ -6,15 +6,17 @@
 }:
 
 {
-  services.transmission.settings = {
+  services.transmission = {
     enable = true;
-    rpc-whitelist = "127.0.0.1";
+    settings = {
+      rpc-whitelist = "127.0.0.1";
 
-    download-dir = "/data/torrent/complete";
+      download-dir = "/data/torrent/complete";
 
-    incomplete-dir = "/data/torrent/incomplete";
-    incomplete-dir-enabled = true;
+      incomplete-dir = "/data/torrent/incomplete";
+      incomplete-dir-enabled = true;
 
-    home = "/persist/transmission";
+      home = "/persist/transmission";
+    };
   };
 }
