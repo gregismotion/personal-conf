@@ -96,7 +96,7 @@
               entrypoints = [ "websecure" "web" ];
               service = "jellyfin";
             };
-            jellyfin = {
+            traefik = {
               rule = "Host(`transmission.freeself.one`)";
               tls = {
                 certresolver = "njalla";
