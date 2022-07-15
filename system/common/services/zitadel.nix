@@ -9,7 +9,7 @@
   imports = [ "${inputs.secrets}/services/zitadel/zitadel.nix" ];
   config = {
     services.zitadel = {
-      enable = true;
+      enable = false;
       extraConfig = ''
         ExternalSecure: true
         ExternalDomain: sso.freeself.one
@@ -26,7 +26,7 @@
     };
 
     services.cockroachdb22 = {
-      enable = true;
+      enable = false;
       workingDirectory = /data/postgres/cockroach;
     };
 
