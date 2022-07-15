@@ -2,5 +2,5 @@
 
 {
   imports = [ ./ssh.nix  ];
-  services.mosh.enable = true;
+  programs.mosh.enable = true;
 }
