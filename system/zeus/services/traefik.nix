@@ -96,6 +96,19 @@
               entrypoints = [ "websecure" "web" ];
               service = "jellyfin";
             };
+            oauth-proxy = {
+              rule = "Host(`oauthproxy.freeself.one`, `transmission.freeself.one`) && PathPrefix(`/oauth2/`)";
+              tls = {
+                certresolver = "njalla";
+                domains = [ {
+                  main = "freeself.one"; 
+                  sans = [ "*.freeself.one" ];
+                } ];
+              };
+              entrypoints = [ "websecure" "web" ];
+              service = "oauth-proxy";
+              middlewares = [ "auth-headers" ];
+            };
             transmission = {
               rule = "Host(`transmission.freeself.one`)";
               tls = {
@@ -107,6 +120,7 @@
               };
               entrypoints = [ "websecure" "web" ];
               service = "transmission";
+              middlewares = [ "oauth-errors" "oauth-auth" ];
             };
           };
           services = {
@@ -120,6 +134,10 @@
             };
             jellyfin.loadBalancer = {
               servers = [{ url = "http://localhost:8096"; }];
+              passHostHeader = true;
+            };
+            oauth-proxy.loadBalancer = {
+              servers = [{ url = "http://localhost:4180"; }];
               passHostHeader = true;
             };
             transmission.loadBalancer = {
