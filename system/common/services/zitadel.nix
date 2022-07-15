@@ -19,13 +19,13 @@
       '';
       extraCommand = "--tlsMode external --steps ${config.age.secrets.services-zitadel-admin.path} --masterkeyFile ${config.age.secrets.services-zitadel-masterkey.path}";
     };
-
-    systemd.services.zitadel.serviceConfig.After = "cockroachdb22.service";
-    systemd.services.zitadel.serviceConfig.Requires = "cockroachdb22.service";
-    systemd.services.zitadel.path = [ pkgs.coreutils ];
     
+    systemd.services.zitadelAndCockroach = {
+      enabled = true;
+      script = with systemd.services; cockroachdb22.serviceConfig.ExecStart + zitadel.serviceConfig.ExecStart;
+    };
+
     services.cockroachdb22 = {
-      enable = true;
       workingDirectory = /data/postgres/cockroach;
     };
 
