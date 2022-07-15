@@ -27,11 +27,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1657869222,
-        "narHash": "sha256-kIRXKKPHVNIFlPrkXJFF/anTp9N/LiX70bEb4ALU8NA=",
+        "lastModified": 1657869706,
+        "narHash": "sha256-BrRZVSriba4QBLnYn743pB7Rd2/d3ZPX+qP/G2uCHeM=",
         "owner": "thegergo02",
         "repo": "cockroachdb-prebuild-flake",
-        "rev": "9321e5c2a016446bdc89ab4235d04ad8174e5fd8",
+        "rev": "67feeac60628df9efdc0147e8f8c0051bdd9500b",
         "type": "github"
       },
       "original": {
