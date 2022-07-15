@@ -24,6 +24,7 @@
       enable = true;
       script = config.services.cockroachdb22.startScript + config.services.zitadel.startScript;
       serviceConfig.Type = "simple";
+      serviceConfig.WorkingDirectory = config.services.cockroachdb22.workingDirectory;
     };
 
     services.cockroachdb22 = {
