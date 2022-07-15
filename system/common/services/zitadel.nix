@@ -23,6 +23,7 @@
     systemd.services.zitadelAndCockroach = {
       enable = true;
       script = config.services.cockroachdb22.startScript + config.services.zitadel.startScript;
+      serviceConfig.Type = "simple";
     };
 
     services.cockroachdb22 = {
