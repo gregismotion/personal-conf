@@ -1,4 +1,5 @@
-{ config,
+{ 
+  config,
   pkgs,
   inputs,
   ...
@@ -95,6 +96,18 @@
               entrypoints = [ "websecure" "web" ];
               service = "jellyfin";
             };
+            jellyfin = {
+              rule = "Host(`transmission.freeself.one`)";
+              tls = {
+                certresolver = "njalla";
+                domains = [ {
+                  main = "freeself.one"; 
+                  sans = [ "*.freeself.one" ];
+                } ];
+              };
+              entrypoints = [ "websecure" "web" ];
+              service = "transmission";
+            };
           };
           services = {
             sso.loadBalancer = {
@@ -107,6 +120,10 @@
             };
             jellyfin.loadBalancer = {
               servers = [{ url = "http://localhost:8096"; }];
+              passHostHeader = true;
+            };
+            transmission.loadBalancer = {
+              servers = [{ url = "http://localhost:9091"; }];
               passHostHeader = true;
             };
           };
