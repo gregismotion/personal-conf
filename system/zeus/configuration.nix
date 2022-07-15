@@ -17,6 +17,8 @@
     ../common/services/mosh.nix
     
     ./services/traefik.nix
+    ./services/oauth2_proxy.nix
+
     ./services/postgresql.nix
 
     ../common/services/zitadel.nix
