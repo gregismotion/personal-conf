@@ -14,7 +14,7 @@
     ./store.nix
     ../common/users.nix
     #../common/manage-conf.nix
-    ../common/services/ssh.nix
+    ../common/services/mosh.nix
     ../common/key.nix
   ];
   

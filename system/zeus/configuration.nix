@@ -14,7 +14,7 @@
     ../common/key.nix
     ./firewall.nix
   ] ++ [
-    ../common/services/ssh.nix
+    ../common/services/mosh.nix
     
     ./services/traefik.nix
     ./services/postgresql.nix
