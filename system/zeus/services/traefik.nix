@@ -145,8 +145,8 @@
               passHostHeader = true;
             };
           };
-          middlewares = {
-            /*auth-headers = {
+          /*middlewares = {
+            auth-headers = {
 	      sslRedirect = true;
 	      stsSeconds = 315360000;
 	      browserXssFilter = true;
@@ -167,8 +167,8 @@
                 service = "oauth-backend";
                 query = "/oauth2/sign_in";
               };
-            };*/
-          };
+            };
+          };*/
         };
       };
     }; 
