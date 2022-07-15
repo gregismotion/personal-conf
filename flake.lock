@@ -27,11 +27,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1657870378,
-        "narHash": "sha256-KKwBLI4PiBMqLvvNR4JuYmmOVKv1dBX7rhFoOE5B1ms=",
+        "lastModified": 1657870908,
+        "narHash": "sha256-/N39A4HHdqmTdr/tuGnQAK+CUOSSu6K7itMWBMHcpNo=",
         "owner": "thegergo02",
         "repo": "cockroachdb-prebuild-flake",
-        "rev": "411ce81cdd9ecae01292df0015589b1f07822080",
+        "rev": "0da721a79c85f9caad498501d0f122f4a557a62e",
         "type": "github"
       },
       "original": {
@@ -176,11 +176,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1657870389,
-        "narHash": "sha256-/eI+vbq9fNohOe18CLLRv2/FB2jlNsrgO9G2T6tl9Jk=",
+        "lastModified": 1657871012,
+        "narHash": "sha256-QNQ7rFNtrQ1VZkSrNRAADd1WVk08cWT2avER1aEiu0Q=",
         "owner": "thegergo02",
         "repo": "zitadel-prebuild-flake",
-        "rev": "71d89fc64d6dbf46f945885735a99633392030b1",
+        "rev": "b6c91006b68d04ed4e526a9f15197837d707d2ab",
         "type": "github"
       },
       "original": {
