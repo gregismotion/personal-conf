@@ -22,7 +22,6 @@
 
     systemd.services.zitadel.serviceConfig.After = "cockroachdb22.service";
     systemd.services.zitadel.serviceConfig.Requires = "cockroachdb22.service";
-    systemd.services.zitadel.serviceConfig.ExecStartPre = "sleep 30";
     systemd.services.zitadel.path = [ pkgs.coreutils ];
     
     services.cockroachdb22 = {
