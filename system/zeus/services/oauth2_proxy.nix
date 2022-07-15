@@ -13,6 +13,8 @@
     upstream = [
       "https://transmission.freeself.one"
     ];
+    clientID = "170138090634019182@oauth2_proxy";
+    clientSecret = "gsCsMF80yiP6cK1iWnBcZevguArodMDIDihLX5NxbWMCRdUpymzvge3mAwnUKazD"; # FIXME: temp secret
     email.domains = [ "*" ];
     extraConfig = {
       user_id_claim = "sub";
