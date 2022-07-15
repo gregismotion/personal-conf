@@ -18,10 +18,10 @@
     cookie.secret = "YxrNGItXaEGulQt97qEvurRAzO1MI9OUt_XrZX6UOPw="; # FIXME: temp secret
     email.domains = [ "*" ];
     extraConfig = {
-      user_id_claim = "sub";
-      provider_display_name = "ZITADEL";
-      oidc_issuer_url = "https://issuer.zitadel.ch";
-      skip_provider_button = true;
+      user-id-claim = "sub";
+      provider-display-name = "ZITADEL";
+      oidc-issuer-url = "https://issuer.zitadel.ch";
+      skip-provider-button = true;
     };
   };
 }
