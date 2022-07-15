@@ -26,6 +26,7 @@
     services.cockroachdb22 = {
       enable = true;
       workingDirectory = /data/postgres/cockroach;
+      serviceConfig.type = "oneshot";
     };
 
   };
