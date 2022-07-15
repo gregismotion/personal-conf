@@ -21,9 +21,7 @@
     };
 
     systemd.services.zitadel.serviceConfig.After = "cockroachdb22.service";
-    systemd.services.cockroachdb22.postStart = ''
-      sleep 30
-    '';
+    systemd.services.zitadel.serviceConfig.Requires = "cockroachdb22.service";
 
     services.cockroachdb22 = {
       enable = true;
