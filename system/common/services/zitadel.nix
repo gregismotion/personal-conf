@@ -9,7 +9,7 @@
   imports = [ "${inputs.secrets}/services/zitadel/zitadel.nix" ];
   config = {
     services.zitadel = {
-      enable = true;
+      enable = false;
       extraConfig = ''
         ExternalSecure: true
         ExternalDomain: sso.freeself.one
@@ -21,11 +21,12 @@
     };
     
     systemd.services.zitadelAndCockroach = {
-      enabled = true;
-      script = with systemd.services; cockroachdb22.serviceConfig.ExecStart + zitadel.serviceConfig.ExecStart;
+      enable = true;
+      script = with config.systemd.services; cockroachdb22.serviceConfig.ExecStart + zitadel.serviceConfig.ExecStart;
     };
 
     services.cockroachdb22 = {
+      enable = false;
       workingDirectory = /data/postgres/cockroach;
     };
 
