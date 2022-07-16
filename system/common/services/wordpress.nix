@@ -7,6 +7,7 @@
         port = 8500;
       }
     ];
+    adminAddr = "thegergo02@freeself.one";
   };
   services.wordpress.sites."varigergoxyz" = {
     database = {
