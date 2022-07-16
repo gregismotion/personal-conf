@@ -61,7 +61,7 @@
                 stsPreload = true;
               };
             };
-            forwardAuth = {
+            oauth-auth = {
               forwardAuth = {
                 address = "https://oauthproxy.freeself.one/oauth2/auth";
                 trustForwardHeader = true;
