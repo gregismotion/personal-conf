@@ -56,10 +56,10 @@
                 contentTypeNosniff = true;
                 forceSTSHeader = true;
                 frameDeny = true;
+                sslHost = "freeself.one";
+                stsIncludeSubdomains = true;
+                stsPreload = true;
               };
-              sslHost = "freeself.one";
-              stsIncludeSubdomains = true;
-              stsPreload = true;
             };
             forwardAuth = {
               address = "https://oauthproxy.freeself.one/oauth2/auth";
