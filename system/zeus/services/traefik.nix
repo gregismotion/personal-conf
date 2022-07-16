@@ -120,6 +120,18 @@
               entrypoints = [ "websecure" "web" ];
               service = "jellyfin";
             };
+            wordpress = {
+              rule = "Host(`wordpress.freeself.one`)";
+              tls = {
+                certresolver = "njalla";
+                domains = [ {
+                  main = "freeself.one"; 
+                  sans = [ "*.freeself.one" ];
+                } ];
+              };
+              entrypoints = [ "websecure" "web" ];
+              service = "wordpress";
+            };
             oauth-proxy = {
               rule = "Host(`oauthproxy.freeself.one`, `transmission.freeself.one`) && PathPrefix(`/oauth2/`)";
               tls = {
@@ -158,6 +170,10 @@
             };
             jellyfin.loadBalancer = {
               servers = [{ url = "http://localhost:8096"; }];
+              passHostHeader = true;
+            };
+            wordpress.loadBalancer = {
+              servers = [{ url = "http://localhost:8500"; }];
               passHostHeader = true;
             };
             oauth-proxy.loadBalancer = {
