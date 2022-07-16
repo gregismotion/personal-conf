@@ -12,7 +12,7 @@
   services.wordpress.sites."varigergoxyz" = {
     database = {
       host = "localhost";
-      port = "5432";
+      port = 5432;
       user = "wordpress";
     };
     uploadsDir = "/data/persist/wordpress/uploads";
