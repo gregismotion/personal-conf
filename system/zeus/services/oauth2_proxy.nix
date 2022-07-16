@@ -22,6 +22,7 @@
       provider-display-name = "ZITADEL";
       oidc-issuer-url = "https://issuer.zitadel.ch";
       skip-provider-button = true;
+      reverse-proxy = true;
     };
   };
 }
