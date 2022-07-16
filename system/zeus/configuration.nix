@@ -30,6 +30,8 @@
     #../common/services/minidlna.nix
     ../common/services/jellyfin.nix
     ../common/services/transmission.nix
+
+    ../common/services/wordpress.nix
   ];
   
   system.stateVersion = "22.05";

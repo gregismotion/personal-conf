@@ -2,7 +2,6 @@
 
 {
   services.wordpress.sites."varigergo.xyz" = {
-    enable = true;
     database = {
       host = "localhost";
       port = "5432";
