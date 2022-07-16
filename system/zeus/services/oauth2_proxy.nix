@@ -20,7 +20,7 @@
     extraConfig = {
       user-id-claim = "sub";
       provider-display-name = "ZITADEL";
-      oidc-issuer-url = "https://issuer.zitadel.ch";
+      oidc-issuer-url = "https://sso.freeself.one";
       skip-provider-button = true;
       reverse-proxy = true;
     };
