@@ -70,7 +70,7 @@
             oauth-errors = {
               errors = {
                 status = [ "401-403" ];
-                service = "oauth-backend";
+                service = "oauth-proxy";
                 query = "/oauth2/sign_in";
               };
             };
