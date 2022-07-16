@@ -49,9 +49,9 @@
         http = {
          middlewares = {
             auth-headers = {
-              sslRedirect = true;
-              stsSeconds = 315360000;
               headers = {
+                sslRedirect = true;
+                stsSeconds = 315360000;
                 browserXssFilter = true;
                 contentTypeNosniff = true;
                 forceSTSHeader = true;
