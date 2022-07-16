@@ -16,6 +16,8 @@
       user = "wordpress";
     };
     uploadsDir = "/data/persist/wordpress/uploads";
-    extraConfig.SCRIPT_DEBUG = true;
+    extraConfig = [
+      "define('SCRIPT_DEBUG', true);"
+    ];
   };
 }
