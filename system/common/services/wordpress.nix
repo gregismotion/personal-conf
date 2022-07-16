@@ -1,7 +1,7 @@
 { config, pkgs, ...  }:
 
 {
-  services.wordpress.sites."varigergo.xyz".virtualHost.listen."*".port = 8500;
+  services.wordpress.sites."varigergo.xyz".virtualHost.port = 8500;
   services.wordpress.sites."varigergo.xyz" = {
     database = {
       host = "localhost";
