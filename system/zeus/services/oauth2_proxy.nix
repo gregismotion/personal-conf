@@ -23,7 +23,6 @@
       oidc-issuer-url = "https://sso.freeself.one";
       skip-provider-button = true;
       reverse-proxy = true;
-      cookie-samesite = "lax";
     };
   };
 }
