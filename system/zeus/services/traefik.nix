@@ -33,6 +33,31 @@
           };
           websecure.address = ":443";
         };
+        
+        middlewares = {
+          auth-headers = {
+            sslRedirect = true;
+            stsSeconds = 315360000;
+            browserXssFilter = true;
+            contentTypeNosniff = true;
+            forceSTSHeader = true;
+            sslHost = "freeself.one";
+            stsIncludeSubdomains = true;
+            stsPreload = true;
+            frameDeny = true;
+          };
+          forwardAuth = {
+            address = "https://oauthproxy.freeself.one/oauth2/auth";
+            trustForwardHeader = true;
+          };
+          oauth-errors = {
+            errors = {
+              status = [ "401-403" ];
+              service = "oauth-backend";
+              query = "/oauth2/sign_in";
+            };
+          };
+        };
 
         certificatesresolvers.njalla.acme = {
           email = "varigergo05@gmail.com";
@@ -145,30 +170,6 @@
               passHostHeader = true;
             };
           };
-          /*middlewares = {
-            auth-headers = {
-	      sslRedirect = true;
-	      stsSeconds = 315360000;
-	      browserXssFilter = true;
-	      contentTypeNosniff = true;
-	      forceSTSHeader = true;
-	      sslHost = "freeself.one";
-	      stsIncludeSubdomains = true;
-	      stsPreload = true;
-	      frameDeny = true;
-            };
-            forwardAuth = {
-              address = "https://oauthproxy.freeself.one/oauth2/auth";
-              trustForwardHeader = true;
-            };
-            oauth-errors = {
-              errors = {
-                status = [ "401-403" ];
-                service = "oauth-backend";
-                query = "/oauth2/sign_in";
-              };
-            };
-          };*/
         };
       };
     }; 
