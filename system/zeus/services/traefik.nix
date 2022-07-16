@@ -121,7 +121,7 @@
               service = "jellyfin";
             };
             wordpress = {
-              rule = "Host(`wordpress.freeself.one`)";
+              rule = "Host(`blog.freeself.one`)";
               tls = {
                 certresolver = "njalla";
                 domains = [ {
