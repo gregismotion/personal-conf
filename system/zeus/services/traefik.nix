@@ -47,7 +47,7 @@
       };
       dynamicConfigOptions = {
         http = {
-          middlewares = {
+         /* middlewares = {
             auth-headers = {
               sslRedirect = true;
               stsSeconds = 315360000;
@@ -70,7 +70,7 @@
                 query = "/oauth2/sign_in";
               };
             };
-          };
+          };*/
           routers = {
             traefik = {
               rule = "Host(`traefik.freeself.one`)";
