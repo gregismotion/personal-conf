@@ -54,12 +54,12 @@
               headers = {
                 browserXssFilter = true;
                 contentTypeNosniff = true;
+                forceSTSHeader = true;
+                frameDeny = true;
               };
-              forceSTSHeader = true;
               sslHost = "freeself.one";
               stsIncludeSubdomains = true;
               stsPreload = true;
-              frameDeny = true;
             };
             forwardAuth = {
               address = "https://oauthproxy.freeself.one/oauth2/auth";
