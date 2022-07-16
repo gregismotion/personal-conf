@@ -62,7 +62,7 @@
               };
             };
             forwardAuth = {
-              address = "https://oauthproxy.freeself.one/oauth2/auth";
+              forwardAuth.address = "https://oauthproxy.freeself.one/oauth2/auth";
               trustForwardHeader = true;
             };
             oauth-errors = {
