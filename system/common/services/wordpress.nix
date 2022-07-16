@@ -4,7 +4,7 @@
   services.wordpress.sites."varigergoxyz".virtualHost = {
     listen = {
       "*" = {
-        port = 8500
+        port = 8500;
       };
     };
   };
