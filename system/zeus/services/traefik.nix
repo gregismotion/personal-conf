@@ -51,7 +51,9 @@
             auth-headers = {
               sslRedirect = true;
               stsSeconds = 315360000;
-              browserXssFilter = true;
+              headers = {
+                browserXssFilter = true;
+              };
               contentTypeNosniff = true;
               forceSTSHeader = true;
               sslHost = "freeself.one";
