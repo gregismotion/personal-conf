@@ -2,11 +2,11 @@
 
 {
   services.wordpress.sites."varigergoxyz".virtualHost = {
-    listen = {
-      "*" = {
+    listen = [
+      {
         port = 8500;
       };
-    };
+    ];
   };
   services.wordpress.sites."varigergoxyz" = {
     database = {
