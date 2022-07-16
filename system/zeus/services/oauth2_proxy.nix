@@ -18,7 +18,8 @@
     cookie = {
       secret = "YxrNGItXaEGulQt97qEvurRAzO1MI9OUt_XrZX6UOPw="; # FIXME: temp secret
       #domain = ".freeself.one";
-      secure = false;
+      #secure = false;
+      httpOnly = false;
     };
     email.domains = [ "*" ];
     extraConfig = {
