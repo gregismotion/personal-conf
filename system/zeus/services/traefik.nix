@@ -53,8 +53,8 @@
               stsSeconds = 315360000;
               headers = {
                 browserXssFilter = true;
+                contentTypeNosniff = true;
               };
-              contentTypeNosniff = true;
               forceSTSHeader = true;
               sslHost = "freeself.one";
               stsIncludeSubdomains = true;
