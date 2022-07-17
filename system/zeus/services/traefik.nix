@@ -19,7 +19,7 @@
       enable = true;
       dataDir = "/persist/traefik/";
       staticConfigOptions = {
-        #log.level = "DEBUG";
+        log.level = "DEBUG";
 
         api.dashboard = true;
 
