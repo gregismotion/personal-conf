@@ -4,7 +4,7 @@
   imports = [
     ../common/type/gui.nix
     ./hardware-configuration.nix
-    ../common/hardware/nvidia-legacy390.nix
+    #../common/hardware/nvidia-legacy390.nix # NOTE: no, we don't do that around here
     ../common/hardware/rtl88x2bu.nix
     ./boot.nix
     ../common/flakes.nix
