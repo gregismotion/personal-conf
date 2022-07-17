@@ -26,6 +26,8 @@
   
   home.file.".config/bspwm".source = ../../../config/bspwm;
   home.file.".config/sxhkd".source = ../../../config/sxhkd;
+  
+  programs.obs-studio.enable = true;
 
   services.sxhkd.enable = true;
   xsession = {
