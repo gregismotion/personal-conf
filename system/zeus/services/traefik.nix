@@ -71,7 +71,7 @@
               errors = {
                 status = [ "401-403" ];
                 service = "oauth-proxy";
-                query = "/oauth2/start";
+                query = "/oauth2/sign-in";
               };
             };
           };
