@@ -29,6 +29,7 @@
       reverse-proxy = true;
       pass-access-token = false;
       cookie-samesite = "lax";
+      show-debug-on-error = true;
     };
   };
 }
