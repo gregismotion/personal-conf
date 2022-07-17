@@ -25,6 +25,7 @@
       script = config.services.cockroachdb22.startScript + config.services.zitadel.startScript;
       serviceConfig.Type = "simple";
       serviceConfig.WorkingDirectory = config.services.cockroachdb22.workingDirectory;
+      wantedBy = [ "multi-user.target" ];
     };
 
     services.cockroachdb22 = {
