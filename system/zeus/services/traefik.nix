@@ -52,7 +52,7 @@
               headers = {
                 sslRedirect = true;
                 stsSeconds = 315360000;
-                #browserXssFilter = true;
+                browserXssFilter = true;
                 contentTypeNosniff = true;
                 forceSTSHeader = true;
                 frameDeny = true;
