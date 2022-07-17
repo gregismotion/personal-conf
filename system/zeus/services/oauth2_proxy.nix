@@ -17,7 +17,7 @@
     clientSecret = "gsCsMF80yiP6cK1iWnBcZevguArodMDIDihLX5NxbWMCRdUpymzvge3mAwnUKazD"; # FIXME: temp secret
     cookie = {
       secret = "YxrNGItXaEGulQt97qEvurRAzO1MI9OUt_XrZX6UOPw="; # FIXME: temp secret
-      domain = ".freeself.one";
+      domain = "oauthproxy.freeself.one";
       secure = true;
     };
     email.domains = [ "*" ];
