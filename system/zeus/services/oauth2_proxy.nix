@@ -19,7 +19,7 @@
       secret = "YxrNGItXaEGulQt97qEvurRAzO1MI9OUt_XrZX6UOPw="; # FIXME: temp secret
       #domain = ".freeself.one";
       #secure = false;
-      httpOnly = false;
+      #httpOnly = false;
     };
     email.domains = [ "*" ];
     extraConfig = {
@@ -28,6 +28,8 @@
       oidc-issuer-url = "https://sso.freeself.one";
       skip-provider-button = true;
       reverse-proxy = true;
+      pass-access-token = false;
+      cookie-samesite = "lax";
     };
   };
 }
