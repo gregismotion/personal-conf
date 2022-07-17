@@ -30,8 +30,12 @@
               to = "websecure";
               scheme = "https";
             };
+            forwardedHeaders.insecure = true;
           };
-          websecure.address = ":443";
+          websecure = {
+            address = ":443";
+            forwardedHeaders.insecure = true;
+          };
         };
         
         certificatesresolvers.njalla.acme = {
