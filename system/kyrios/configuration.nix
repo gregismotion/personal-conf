@@ -11,6 +11,7 @@
     ../common/basic.nix
     ../common/phome-wireless.nix
     ./x.nix
+    ./weylus.nix
     ./store.nix
     ../common/users.nix
     #../common/manage-conf.nix
