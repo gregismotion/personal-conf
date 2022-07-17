@@ -2,6 +2,7 @@
 
 {
   boot = {
+    resumeDevice = "/dev/disk/by-uuid/75666cdc-e2e4-498c-af76-9c6ac2a65256";
     loader = {
       efi.canTouchEfiVariables = true;
       grub = {
