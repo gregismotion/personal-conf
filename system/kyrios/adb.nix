@@ -1,8 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  programs = {
-    adb.enable = true;
-    scrcpy.enable = true;
-  };
+  programs.adb.enable = true;
+  environment.systemPackages = [ pkgs.scrcpy ];
 }
