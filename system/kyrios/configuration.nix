@@ -17,6 +17,7 @@
     ../common/users.nix
     #../common/manage-conf.nix
     ../common/services/mosh.nix
+    ../common/services/syncthing-firewall.nix
     ../common/key.nix
   ];
   
