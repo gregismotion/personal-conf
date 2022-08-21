@@ -2,6 +2,7 @@
   home.packages = with pkgs; [ 
     libreoffice joplin-desktop
     vscodium pkgs.godot
+    obsidian
     redshift
     keepassxc
     rofi maim
