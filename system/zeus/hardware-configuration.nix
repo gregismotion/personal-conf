@@ -8,9 +8,9 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usb_storage" "sd_mod" "sr_mod" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "ohci_pci" "ehci_pci" "pata_atiixp" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-intel" ];
+  boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
@@ -19,7 +19,7 @@
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/6250-3004";
+    { device = "/dev/disk/by-uuid/611C-0B0E";
       fsType = "vfat";
     };
 
@@ -48,40 +48,16 @@
       fsType = "zfs";
     };
 
-  fileSystems."/data/torrent" =
-    { device = "data/local/torrent";
-      fsType = "zfs";
-    };
-
-  fileSystems."/data/share" =
-    { device = "data/local/share";
-      fsType = "zfs";
-    };
-
-  fileSystems."/data/postgres" =
-    { device = "data/safe/postgres";
-      fsType = "zfs";
-    };
-
-  fileSystems."/data/important" =
-    { device = "data/safe/important";
-      fsType = "zfs";
-    };
-
-  fileSystems."/data/homes" =
-    { device = "data/safe/homes";
-      fsType = "zfs";
-    };
-
-  fileSystems."/data/persist" =
-    { device = "data/safe/persist";
-      fsType = "zfs";
-    };
-
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/0a5c97f9-fdf9-4260-ab2e-d20f13e7b6ff"; }
+    [ { device = "/dev/disk/by-uuid/b52c3ef6-1bec-41d7-a6cc-d4baa3e2abb7"; }
     ];
 
-  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
-  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
+  # (the default) this is the recommended approach. When using systemd-networkd it's
+  # still possible to use this option, but it's recommended to use it in conjunction
+  # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
+  networking.useDHCP = lib.mkDefault true;
+  # networking.interfaces.enp1s0.useDHCP = lib.mkDefault true;
+
+  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
